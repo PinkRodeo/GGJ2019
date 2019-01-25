@@ -17,13 +17,13 @@ namespace FMOD
     */
     public class VERSION
     {
-        public const int    number = 0x00011009;
+        public const int    number = 0x00011010;
 #if (UNITY_IPHONE || UNITY_TVOS || UNITY_SWITCH || UNITY_WEBGL) && !UNITY_EDITOR
         public const string dll    = "__Internal";
-#elif (UNITY_PS4) && !UNITY_EDITOR
-        public const string dll    = "libfmod";
 #elif (UNITY_PS4) && DEVELOPMENT_BUILD
         public const string dll    = "libfmodL";
+#elif (UNITY_PS4) && !UNITY_EDITOR
+        public const string dll    = "libfmod";
 #elif (UNITY_PSP2 || UNITY_WIIU) && !UNITY_EDITOR
         public const string dll    = "libfmodstudio";
 /* Linux defines moved before the Windows define, otherwise Linux Editor tries to use Win lib when selected as build target.*/
@@ -4050,6 +4050,10 @@ namespace FMOD
         {
             return FMOD5_DSP_GetMeteringInfo(this.handle, out inputInfo, zero);
         }
+        public RESULT getCPUUsage(out uint exclusive, out uint inclusive)
+        {
+            return FMOD5_DSP_GetCPUUsage(this.handle, out exclusive, out inclusive);
+        }
 
         #region importfunctions
         [DllImport(VERSION.dll)]
@@ -4132,6 +4136,8 @@ namespace FMOD
         public static extern RESULT FMOD5_DSP_GetMeteringInfo            (IntPtr dsp, IntPtr zero, out DSP_METERING_INFO outputInfo);
         [DllImport(VERSION.dll)]
         public static extern RESULT FMOD5_DSP_GetMeteringInfo            (IntPtr dsp, out DSP_METERING_INFO inputInfo, IntPtr zero);
+        [DllImport(VERSION.dll)]
+        public static extern RESULT FMOD5_DSP_GetCPUUsage                (IntPtr dsp, out uint exclusive, out uint inclusive);
         #endregion
 
         #region wrapperinternal
