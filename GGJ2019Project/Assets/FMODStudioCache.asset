@@ -13,41 +13,18 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114311251073200930}
-  - {fileID: 114275242202387206}
+  - {fileID: 114892274193479788}
+  - {fileID: 114106883633443888}
   EditorEvents:
-  - {fileID: 114145143687136294}
-  - {fileID: 114388373796482088}
+  - {fileID: 114848071822960574}
+  - {fileID: 114935527107528370}
   MasterBanks:
-  - {fileID: 114275242202387206}
+  - {fileID: 114106883633443888}
   StringsBanks:
-  - {fileID: 114311251073200930}
+  - {fileID: 114892274193479788}
   stringsBankWriteTime: 636840510338185800
   cacheVersion: 3
---- !u!114 &114145143687136294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Music/IntroMusic
-  guid: 0f260d7edbd0df4cbfa33790a3f19191
-  Banks:
-  - {fileID: 114275242202387206}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &114275242202387206
+--- !u!114 &114106883633443888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,7 +43,30 @@ MonoBehaviour:
   - Name: 
     Value: 13972
   Exists: 1
---- !u!114 &114311251073200930
+--- !u!114 &114848071822960574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/IntroMusic
+  guid: 0f260d7edbd0df4cbfa33790a3f19191
+  Banks:
+  - {fileID: 114106883633443888}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &114892274193479788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,14 +78,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: S:\Projects\GGJ2019\FMODAssets\Master Bank.strings.bank
+  Path: ..\FMODAssets\Master Bank.strings.bank
   lastModified: 636840510338185800
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 782
   Exists: 1
---- !u!114 &114388373796482088
+--- !u!114 &114935527107528370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   Path: event:/SFX/TestEvent
   guid: 6fe329d2a639a74585298ccdee871f6b
   Banks:
-  - {fileID: 114275242202387206}
+  - {fileID: 114106883633443888}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
