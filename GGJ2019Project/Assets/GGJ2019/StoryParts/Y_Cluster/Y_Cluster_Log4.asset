@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Y_Cluster_Log4
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Linn: How long has it been. Two\u2026 three years? Time flows strangely
+      around these parts. I plant roses the one day and they blossom the next. Or
+      do I remember so little?"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: Sometimes I spend day and night, how much of that still makes sense
+      anyway, looking at the waves. It reminds me of the ocean. I can hardly tell
+      the difference.
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Apart from the frozen planet that is. Did we have one in the ocean
+      back home? No no no\u2026 that\u2019s ridiculous, of course, we didn\u2019t
+      have that. Silly Linn, getting things mixed up again."
+    TextPrintInterval: 1
+    Keuzes: []

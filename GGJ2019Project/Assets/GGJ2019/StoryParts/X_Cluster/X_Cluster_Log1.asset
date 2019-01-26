@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: X_Cluster_Log1
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "(You): They are\u2026 Emma, Aziz, \u2026 how long ago was this recorded?\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: You drifters still out there? This was a strong one. \r\nAziz:
+      Still fighting the good fight.\r\n"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Mir: Peachy.\r\nTom: Nothing we can\u2019t handle. You?\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: Couldn\u2019t be better.\r\nAziz: Well come over here for
+      heatshield repairs, we can\u2019t let another flare catch us by surprise. \r\n"
+    TextPrintInterval: 1
+    Keuzes: []

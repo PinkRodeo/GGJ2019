@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Y_Cluster_Log5
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Linn: The lights from the Rift are\u2026 awe-inspiring. Their movement
+      so slow. I had to be lucky on Earth to see the Aurora\u2019s but here, they
+      seem to be with me every step of the way. "
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: At least a part of home came along.
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: When you, who ever is listening, get here. Give it a look. Not too
+      long though, it can make you a little dizzy and tired. Look at that, these turned
+      out nice.
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: Hey little roses, how are we today? [yawns] Speak of the devil. There
+      he is again.
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: Time to get some sleep. Seems like you just woke up, Linn. But hey.
+      No one to judge me for taking a nap, right.
+    TextPrintInterval: 1
+    Keuzes: []

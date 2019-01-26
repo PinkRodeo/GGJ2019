@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: X_Cluster_Log3
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: Update for the fleet. We\u2019re changing position. The flares
+      have died down, so we\u2019re trying for the Titan\u2019s orbit. "
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: 'Tom: Our asses are getting cold out here waiting for you at the
+      Rift. Warming them is the least that Titan owes us. '
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: [laughs] Classy as always. As I was saying, we\u2019ll be
+      making for the orbit later today. Can\u2019t wait to meet you here. The Rifts
+      is\u2026 Just bring your camera\u2019s, trust me."
+    TextPrintInterval: 1
+    Keuzes: []

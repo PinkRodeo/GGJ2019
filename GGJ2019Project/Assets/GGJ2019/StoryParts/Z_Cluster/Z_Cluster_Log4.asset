@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Z_Cluster_Log4
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: Ten years after we arrived, the last construction is planned
+      to reach completion this week. Home Fleet, we\u2019re ready for you over here.
+      We just need the word. \r\nTheus: Anything, just a hello, check, or good job?
+      \r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: [laughs] Yes Gofer you did a very good job too. \r\nDanny:
+      Theus can I come in?\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: Yes, the coast is clear. \r\nDanny: No answer huh?"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: Just the usual. Had to try one last time. Is everyone ready
+      over there? \r\nDanny: We altered the pod for everyone. Yours to cover Goof
+      as well."
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: And for the little one?\r\nDanny: We\u2019re sure it\u2019s
+      perfect. Yasemin let me check hundreds of times.\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: Good. You did well. \r\nDanny: You\u2019ll be alright over
+      here?\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: I\u2019ll just try one more time. Be there in 10."
+    TextPrintInterval: 1
+    Keuzes: []

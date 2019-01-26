@@ -13,17 +13,37 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114311251073200930}
-  - {fileID: 114275242202387206}
+  - {fileID: 114496810863547186}
+  - {fileID: 114020967635479126}
   EditorEvents:
-  - {fileID: 114145143687136294}
-  - {fileID: 114388373796482088}
+  - {fileID: 114807606817875670}
+  - {fileID: 114554700745579470}
   MasterBanks:
-  - {fileID: 114275242202387206}
+  - {fileID: 114020967635479126}
   StringsBanks:
-  - {fileID: 114311251073200930}
-  stringsBankWriteTime: 636840510338185800
+  - {fileID: 114496810863547186}
+  stringsBankWriteTime: 636841031970953336
   cacheVersion: 3
+--- !u!114 &114020967635479126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\dimin\OneDrive - ROC van Twente\Huiswerk\project\2.2\GlobalGameJam
+    2019\FMODAssets\Master Bank.bank
+  lastModified: 636841031970893741
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 13972
+  Exists: 1
 --- !u!114 &114145143687136294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,4 +127,69 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 0
+--- !u!114 &114496810863547186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: ..\FMODAssets\Master Bank.strings.bank
+  lastModified: 636841031970953336
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 782
+  Exists: 1
+--- !u!114 &114554700745579470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TestEvent
+  guid: 6fe329d2a639a74585298ccdee871f6b
+  Banks:
+  - {fileID: 114020967635479126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114807606817875670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/IntroMusic
+  guid: 0f260d7edbd0df4cbfa33790a3f19191
+  Banks:
+  - {fileID: 114020967635479126}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
   Length: 0

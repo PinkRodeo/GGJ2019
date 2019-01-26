@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: X_Cluster_Log4
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Tom: Approaching our Titan. Do you want to say hello from the dome?\r\nEmma:
+      Let\u2019s get into position first\u2026 Update to the fleet: Hosts 1, 2, 3,and
+      4 are an hour away from reaching [...]\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: [...]Tom, what was that?\r\nTom: Unexpected heat and radiation
+      increase surrounding the star."
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Mir: Another flare? We were over this, weren\u2019t we? We\u2019ll
+      lose the station this close to it! \r\nTom: Get to the pods, it\u2019s too late
+      to turn around.[...]\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: [...] We\u2019re in position, pod 02 and 04. Tom where are
+      you?! \r\nMir: Tom, don\u2019t do anything stupid. "
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Mir: I\u2019m getting him over here. Emma, Aziz, stay in the pods.
+      Tom, listen to me...\r\nEmma: Aziz, we can\u2019t leave them.\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Aziz: We\u2019re not. It\u2019s just in case."
+    TextPrintInterval: 1
+    Keuzes: []
