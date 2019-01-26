@@ -57,6 +57,14 @@ public class JunkerGameMode : MonoBehaviour
 		}
 	}
 
+	public EventManager eventManager
+	{
+		get
+		{
+			return EventManager.instance;
+		}
+	}
+
 	private JunkerPlayer _player;
 	private GrappleClaw _claw;
 	private CameraManager _cameraManager;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 [System.Serializable]
 public class OptionData
@@ -27,18 +28,18 @@ public class GameEvent
     [TextArea]
     public string description;
     public float TextPrintInterval = 1;
-    public List<OptionData> Keuzes = new List<OptionData>();
+    public List<OptionData> Choices = new List<OptionData>();
 
     public GameEvent SetImage(Sprite _image) { image = _image; return this; }
     public GameEvent SetTitle(string _title) { title = _title; return this; }
     public GameEvent SetDescription(string _description) { description = _description; return this; }
-    public GameEvent SetKeuzes(List<OptionData> _KeuzeData) { Keuzes = _KeuzeData; return this; }
+    public GameEvent SetChoices(List<OptionData> _choiceData) { Choices = _choiceData; return this; }
     public GameEvent SetTextPrintInterval(float time) { TextPrintInterval = time; return this; }
 }
 
 public class EventManager : MonoBehaviour
 {
-    static EventManager instance;
+    public static EventManager instance;
 
     public delegate void GameEventDelegate(GameEvent excutedEvent);
 
@@ -46,7 +47,7 @@ public class EventManager : MonoBehaviour
 
     public delegate void Delegate();
 
-    Queue<GameEvent> eventQue = new Queue<GameEvent>();
+    Queue<GameEvent> eventQueue = new Queue<GameEvent>();
 
     public static GameEventDelegate OnEventStart;
     public static Delegate onEventFinish;
@@ -64,12 +65,24 @@ public class EventManager : MonoBehaviour
         onEventFinish += FinishEvent;
     }
 
-    public static void AddEvent(GameEvent gameEvent)
+	protected void Update()
+	{
+		if (IsEventActive())
+		{
+			Time.timeScale = 0.2f;
+		}
+		else
+		{
+			Time.timeScale = 1f;
+		}
+	}
+
+	public static void AddEvent(GameEvent gameEvent)
     {
-        instance.eventQue.Enqueue(gameEvent);
+        instance.eventQueue.Enqueue(gameEvent);
 
         //als er geen ander item in de lijst is dan de item die we zojuist hebben toegevoegd
-        if (instance.eventQue.Count == 1)
+        if (instance.eventQueue.Count == 1)
         {
             instance.ExecuteNextItemInQue();
 
@@ -78,13 +91,13 @@ public class EventManager : MonoBehaviour
 
     public static void ReplaceCurrentEvents(List<GameEvent> newEvents)
     {
-        instance.eventQue.Clear();
+        instance.eventQueue.Clear();
 
 
-        instance.eventQue.Enqueue(newEvents[0]);
+        instance.eventQueue.Enqueue(newEvents[0]);
         foreach (GameEvent gameEvent in newEvents)
         {
-            instance.eventQue.Enqueue(gameEvent);
+            instance.eventQueue.Enqueue(gameEvent);
         }
         
         instance.ExecuteNextItemInQue();
@@ -92,20 +105,20 @@ public class EventManager : MonoBehaviour
 
     public static void ClearEvents()
     {
-        instance.eventQue.Clear();
+        instance.eventQueue.Clear();
         onEventListEmpty.Invoke();
     }
 
     void FinishEvent()
     {
         //als we momenteel geen event hebben
-        if (eventQue.Count == 0)
+        if (eventQueue.Count == 0)
             return;
 
-        eventQue.Dequeue();
+        eventQueue.Dequeue();
 
         //als er geen event overgebleven is
-        if (eventQue.Count == 0)
+        if (eventQueue.Count == 0)
         {
             onEventListEmpty.Invoke();
             return;
@@ -116,6 +129,11 @@ public class EventManager : MonoBehaviour
 
     void ExecuteNextItemInQue()
     {
-        OnEventStart.Invoke(eventQue.Peek());
+        OnEventStart.Invoke(eventQueue.Peek());
     }
+
+	public bool IsEventActive()
+	{
+		return eventQueue.Count != 0;
+	}
 }

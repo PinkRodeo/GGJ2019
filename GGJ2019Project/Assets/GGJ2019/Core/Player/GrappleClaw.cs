@@ -94,6 +94,8 @@ public class GrappleClaw : MonoBehaviour
 
 					_parentConstraint.enabled = true;
 
+					currentTarget.ShipDocked();
+
 					break;
 				case E_GrappleState.Releasing:
 					JunkerGameMode.instance.cameraManager.ZoomOut();
@@ -102,7 +104,7 @@ public class GrappleClaw : MonoBehaviour
 					{
 						JunkerGameMode.instance.player.Detach();
 					}
-
+					currentTarget.ShipUnDocked();
 					grappleState = E_GrappleState.Retracted;
 					break;
 				default:
@@ -187,15 +189,14 @@ public class GrappleClaw : MonoBehaviour
 		if (Input.GetMouseButtonDown(1))
 		{
 
-			if (grappleState == E_GrappleState.Docked)
+			if (grappleState == E_GrappleState.Docked && !JunkerGameMode.instance.eventManager.IsEventActive())
 			{
 				Debug.Log("Released from docking");
 				grappleState = E_GrappleState.Releasing;
 			}
-			else
+			else if (grappleState == E_GrappleState.Travelling)
 			{
 				grappleState = E_GrappleState.Retracted;
-
 			}
 		}
 
@@ -386,6 +387,7 @@ public class GrappleClaw : MonoBehaviour
 		{
 			Debug.Log("Attached the claw");
 			_trailRenderer.emitting = false;
+			currentTarget.ClawConnect();
 			grappleState = E_GrappleState.Retracting;
 		};
 

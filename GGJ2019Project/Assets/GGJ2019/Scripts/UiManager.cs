@@ -158,16 +158,16 @@ public class UiManager : MonoBehaviour
         {
             CurrentPanel.KeuzeButtons[i].onClick.RemoveAllListeners();
 
-            if (CurrentEvent != null && CurrentEvent.Keuzes != null && i >= CurrentEvent.Keuzes.Count)
+            if (CurrentEvent != null && CurrentEvent.Choices != null && i >= CurrentEvent.Choices.Count)
             {
                 CurrentPanel.KeuzeButtons[i].gameObject.SetActive(false);
             }
             else
             {
                 CurrentPanel.KeuzeButtons[i].gameObject.SetActive(true);
-                CurrentPanel.KeuzeButtons[i].GetComponentInChildren<Text>().text = CurrentEvent.Keuzes[i].text;
+                CurrentPanel.KeuzeButtons[i].GetComponentInChildren<Text>().text = CurrentEvent.Choices[i].text;
 
-                if (CurrentEvent.Keuzes[i].PressedDialogs != null)
+                if (CurrentEvent.Choices[i].PressedDialogs != null)
                 {
                     if (i == 0)
                         CurrentPanel.KeuzeButtons[i].onClick.AddListener(() => OnButton1Pressed());
@@ -189,12 +189,12 @@ public class UiManager : MonoBehaviour
 
     void OnButton1Pressed()
     {
-        EventManager.ReplaceCurrentEvents(CurrentEvent.Keuzes[0].PressedDialogs.eventChain);
+        EventManager.ReplaceCurrentEvents(CurrentEvent.Choices[0].PressedDialogs.eventChain);
     }
 
     void OnButton2Pressed()
     {
-        EventManager.ReplaceCurrentEvents(CurrentEvent.Keuzes[1].PressedDialogs.eventChain);
+        EventManager.ReplaceCurrentEvents(CurrentEvent.Choices[1].PressedDialogs.eventChain);
     }
 
     private void UpdateDescritpion(string text)
