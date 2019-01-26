@@ -13,37 +13,22 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114892274193479788}
-  - {fileID: 114106883633443888}
+  - {fileID: 114685051810675524}
+  - {fileID: 114801464808929758}
   EditorEvents:
-  - {fileID: 114848071822960574}
-  - {fileID: 114935527107528370}
+  - {fileID: 114142361724738494}
+  - {fileID: 114719291187264110}
+  - {fileID: 114558423870427994}
+  - {fileID: 114889044242757332}
+  - {fileID: 114068713543632778}
+  - {fileID: 114347363026276914}
   MasterBanks:
-  - {fileID: 114106883633443888}
+  - {fileID: 114801464808929758}
   StringsBanks:
-  - {fileID: 114892274193479788}
-  stringsBankWriteTime: 636840510338185800
+  - {fileID: 114685051810675524}
+  stringsBankWriteTime: 636841111604059436
   cacheVersion: 3
---- !u!114 &114106883633443888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: S:\Projects\GGJ2019\FMODAssets\Master Bank.bank
-  lastModified: 636840510337196381
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 13972
-  Exists: 1
---- !u!114 &114848071822960574
+--- !u!114 &114068713543632778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,18 +40,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Music/IntroMusic
-  guid: 0f260d7edbd0df4cbfa33790a3f19191
+  Path: event:/SFX/SFX_Hook_ReelTargetIn
+  guid: ead9a692f3c4c648a4c2ca6d48217464
   Banks:
-  - {fileID: 114106883633443888}
+  - {fileID: 114801464808929758}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &114892274193479788
+  MinDistance: 6.4
+  MaxDistance: 20
+  Length: 100
+--- !u!114 &114142361724738494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,17 +60,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: ..\FMODAssets\Master Bank.strings.bank
-  lastModified: 636840510338185800
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 782
-  Exists: 1
---- !u!114 &114935527107528370
+  Path: event:/Music/Music - The Rift
+  guid: 0f260d7edbd0df4cbfa33790a3f19191
+  Banks:
+  - {fileID: 114801464808929758}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 74396
+--- !u!114 &114347363026276914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_Hook_HitReeledInTarget
+  guid: ee0c12245cecf54b8356df5b7a88cffd
+  Banks:
+  - {fileID: 114801464808929758}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 6.4
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114558423870427994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +112,7 @@ MonoBehaviour:
   Path: event:/SFX/TestEvent
   guid: 6fe329d2a639a74585298ccdee871f6b
   Banks:
-  - {fileID: 114106883633443888}
+  - {fileID: 114801464808929758}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -108,3 +120,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114685051810675524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: ..\FMODAssets\Desktop\Master Bank.strings.bank
+  lastModified: 636841111604059436
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1028
+  Exists: 1
+--- !u!114 &114719291187264110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_Hook_HitTarget
+  guid: 5c64f444bf2b1f4eb3ce24c5a410d469
+  Banks:
+  - {fileID: 114801464808929758}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 6.4
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114801464808929758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: S:\Projects\GGJ2019\FMODAssets\Desktop\Master Bank.bank
+  lastModified: 636841111606458181
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1334048
+  Exists: 1
+--- !u!114 &114889044242757332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_Large_Object_Floating_By
+  guid: a5463739508b4d4ca12901ca7b9b2ed1
+  Banks:
+  - {fileID: 114801464808929758}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 10
+  MaxDistance: 15
+  Length: 2000

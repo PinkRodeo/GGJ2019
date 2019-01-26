@@ -10,16 +10,14 @@ public class ClawTarget : MonoBehaviour
 	{
 		gameObject.tag = TAG;
 	}
-
-	// Start is called before the first frame update
-	void Start()
+	
+	public void OnClawConnect()
 	{
-		
+
 	}
 
-	// Update is called once per frame
-	void Update()
+	public void OnClawDocked()
 	{
-		
+
 	}
 }
