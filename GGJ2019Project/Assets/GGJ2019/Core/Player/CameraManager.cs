@@ -13,7 +13,17 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    public Camera currentCamera
+    {
+        get
+        {
+            return _currentCamera;
+        }
+    }
+
     private Transform _transform;
+
+    private Camera _currentCamera;
 
     protected void Awake()
     {
@@ -22,6 +32,8 @@ public class CameraManager : MonoBehaviour
 
     void Start()
     {
+        _currentCamera = Camera.main;
+
         JunkerGameMode.instance.cameraManager = this;
     }
 

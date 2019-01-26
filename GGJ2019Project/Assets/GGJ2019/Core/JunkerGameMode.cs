@@ -23,6 +23,23 @@ public class JunkerGameMode : MonoBehaviour
         }
     }
 
+    public GrappleClaw claw
+    {
+        get
+        {
+            return _claw;
+        }
+        set
+        {
+            if (_claw != null)
+            {
+                Debug.LogError("Trying to assign a new GrappleClaw when one already existed.");
+            }
+
+            _claw = value;
+        }
+    }
+
     public CameraManager cameraManager
     {
         get
@@ -41,6 +58,7 @@ public class JunkerGameMode : MonoBehaviour
     }
 
     private JunkerPlayer _player;
+    private GrappleClaw _claw;
     private CameraManager _cameraManager;
 
 
