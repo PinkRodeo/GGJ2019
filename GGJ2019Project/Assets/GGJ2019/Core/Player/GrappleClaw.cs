@@ -34,6 +34,7 @@ public class GrappleClaw : MonoBehaviour
 			switch (value)
 			{
 				case E_GrappleState.Retracted:
+					JunkerGameMode.instance.cameraManager.ZoomOut();
 					currentTarget = null;
 
 					foreach (var tween in _animationTweens)
@@ -82,6 +83,8 @@ public class GrappleClaw : MonoBehaviour
 
 					break;
 				case E_GrappleState.Docked:
+					JunkerGameMode.instance.cameraManager.ZoomIn();
+
 					fixedJoint.connectedBody = null;
 					fixedJoint.enabled = false;
 					rigidBody.simulated = false;
@@ -91,13 +94,17 @@ public class GrappleClaw : MonoBehaviour
 
 					_parentConstraint.enabled = true;
 
+					currentTarget.ShipDocked();
+
 					break;
 				case E_GrappleState.Releasing:
+					JunkerGameMode.instance.cameraManager.ZoomOut();
+
 					if (JunkerGameMode.instance.player.fixedJoint.connectedBody != null)
 					{
 						JunkerGameMode.instance.player.Detach();
 					}
-
+					currentTarget.ShipUnDocked();
 					grappleState = E_GrappleState.Retracted;
 					break;
 				default:
@@ -136,6 +143,7 @@ public class GrappleClaw : MonoBehaviour
 	public float tightness = 300f;
 	public float damping = 200f;
 
+	public StudioEventEmitter sfx_shootHook;
 	public StudioEventEmitter sfx_hitTarget;
 	public StudioEventEmitter sfx_reelTargetIn;
 	public StudioEventEmitter sfx_hitReeledInTarget;
@@ -174,21 +182,21 @@ public class GrappleClaw : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0) && grappleState == E_GrappleState.Retracted)
 		{
+
 			FireOff(new Vector2((worldTargetPos - playerPos).x, (worldTargetPos - playerPos).y).normalized, 6f);
 		}
 
 		if (Input.GetMouseButtonDown(1))
 		{
 
-			if (grappleState == E_GrappleState.Docked)
+			if (grappleState == E_GrappleState.Docked && !JunkerGameMode.instance.eventManager.IsEventActive())
 			{
 				Debug.Log("Released from docking");
 				grappleState = E_GrappleState.Releasing;
 			}
-			else
+			else if (grappleState == E_GrappleState.Travelling)
 			{
 				grappleState = E_GrappleState.Retracted;
-
 			}
 		}
 
@@ -296,14 +304,16 @@ public class GrappleClaw : MonoBehaviour
 		if (grappleState != E_GrappleState.Retracted)
 		{
 			Debug.LogWarning("Tried to fire off the GrappleClaw while it was still active");
+			return;
 
-			grappleState = E_GrappleState.Retracted;
+			//grappleState = E_GrappleState.Retracted;
 
-			//return;
 		}
 
 
 		grappleState = E_GrappleState.Targeting;
+
+		sfx_shootHook.Play();
 
 		_fireDirection = p_direction;
 		SetClosedVisual(0f);
@@ -377,6 +387,7 @@ public class GrappleClaw : MonoBehaviour
 		{
 			Debug.Log("Attached the claw");
 			_trailRenderer.emitting = false;
+			currentTarget.ClawConnect();
 			grappleState = E_GrappleState.Retracting;
 		};
 

@@ -51,7 +51,7 @@ public class DialogPrinter
             }
             catch (System.Exception) { }
 
-            yield return new WaitForSeconds(0.05f * interval);
+            yield return new WaitForSecondsRealtime(0.05f * interval);
         }
 
         currentState = DialogState.finished;
