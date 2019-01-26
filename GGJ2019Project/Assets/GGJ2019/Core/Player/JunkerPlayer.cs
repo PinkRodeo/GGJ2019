@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class JunkerPlayer : MonoBehaviour
 {
@@ -15,14 +16,16 @@ public class JunkerPlayer : MonoBehaviour
 	}
 
     private Rigidbody2D _rigidBody;
-
+	public FixedJoint2D fixedJoint;
 
 
     protected void Awake ()
     {
         rect_transform = this.transform as RectTransform;
         _rigidBody = this.GetComponent<Rigidbody2D>();
-    }
+		fixedJoint = this.GetComponent<FixedJoint2D>();
+
+	}
 
     // Start is called before the first frame update
     protected void Start()
@@ -77,6 +80,12 @@ public class JunkerPlayer : MonoBehaviour
 
 		JunkerGameMode.instance.claw.ArrivedAtTarget();
 
+		fixedJoint.connectedBody = hitClawTarget.GetComponent<Rigidbody2D>();
+		fixedJoint.enabled = true;
+
+		DebugExtension.DebugPoint(fixedJoint.connectedAnchor, Color.yellow, 5f, 5f, false);
+
+		fixedJoint.connectedBody.AddTorque(50f, ForceMode2D.Impulse);
 
 	}
 }

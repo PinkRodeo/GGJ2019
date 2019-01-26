@@ -13,6 +13,7 @@ public enum E_GrappleState
 	Connecting,
 	Retracting,
 	Docked,
+	Releasing,
 }
 
 public class GrappleClaw : MonoBehaviour
@@ -78,6 +79,16 @@ public class GrappleClaw : MonoBehaviour
 					sfx_reelTargetIn.Stop();
 					sfx_hitReeledInTarget.Play();
 
+					break;
+				case E_GrappleState.Releasing:
+					if (JunkerGameMode.instance.player.fixedJoint.connectedBody != null)
+					{
+						Debug.Log("Removed a source");
+						JunkerGameMode.instance.player.fixedJoint.enabled = false;
+						JunkerGameMode.instance.player.fixedJoint.connectedBody = null;
+					}
+
+					grappleState = E_GrappleState.Retracted;
 					break;
 				default:
 
@@ -147,15 +158,24 @@ public class GrappleClaw : MonoBehaviour
 		DebugExtension.DebugArrow(playerPos, worldTargetPos - playerPos);
 
 
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) && grappleState == E_GrappleState.Retracted)
 		{
 			FireOff(new Vector2((worldTargetPos - playerPos).x, (worldTargetPos - playerPos).y).normalized, 6f);
 		}
 
 		if (Input.GetMouseButtonDown(1))
 		{
-			grappleState = E_GrappleState.Retracted;
 
+			if (grappleState == E_GrappleState.Docked)
+			{
+				Debug.Log("Released from docking");
+				grappleState = E_GrappleState.Releasing;
+			}
+			else
+			{
+				grappleState = E_GrappleState.Retracted;
+
+			}
 		}
 
 		switch (grappleState)
@@ -183,7 +203,7 @@ public class GrappleClaw : MonoBehaviour
 				distance -= distance.normalized * preferredDistance;
 				
 				// TODO: rigidbody for target
-				//var force = -distance * tightness - (damping * (JunkerGameMode.instance.player.rigidBody.velocity - b.rigidbody2D.velocity));
+				// var force = -distance * tightness - (damping * (JunkerGameMode.instance.player.rigidBody.velocity - b.rigidbody2D.velocity));
 				var force = distance * tightness - (damping * (JunkerGameMode.instance.player.rigidBody.velocity));
 
 				JunkerGameMode.instance.player.rigidBody.AddForce(force * Time.deltaTime, ForceMode2D.Force);
@@ -193,6 +213,9 @@ public class GrappleClaw : MonoBehaviour
 
 				break;
 			case E_GrappleState.Docked:
+
+				break;
+			case E_GrappleState.Releasing:
 
 				break;
 			default:

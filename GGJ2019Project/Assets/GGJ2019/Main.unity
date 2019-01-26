@@ -2642,6 +2642,11 @@ PrefabInstance:
       propertyPath: damping
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: sfx_reelTargetIn
+      value: 
+      objectReference: {fileID: 7309389761573129764}
     - target: {fileID: 4198236176330949298, guid: 928256dd2847f0c40850e253dd7d31ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2845,6 +2850,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2235171848416399012, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235171848416399012, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
+        type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235171848416399012, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6328487448710336547, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
         type: 3}
       propertyPath: m_Name
@@ -2967,6 +2987,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 949d1bb41ab11504ab0a0dd2317b69c4, type: 3}
+--- !u!114 &7309389761573129764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6428727154228808650, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7309389761573129763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &9116519578716905637 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2014315212758396550, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
