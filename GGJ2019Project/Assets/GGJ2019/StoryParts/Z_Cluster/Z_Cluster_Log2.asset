@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Z_Cluster_Log2
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Danny: Guys have did you hear from Yas and Lee? \r\nOtto: Nope don\u2019t
+      care, I\u2019m hungry. They\u2019ll get what\u2019s left.\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Joe: They\u2019re probably changing after construction. Habitat
+      3 was wrapped up today.\r\nDanny: Yasemin, Lee, dinner is ready are you guys
+      com..? Ohw\u2026 I\u2019m sorry I didn\u2019t see anything.\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Yasemin: Danny, yes\u2026 Dinner. Sure we\u2019ll be right there.
+      Lee was just\u2026\r\nDanny: No need to explain. I\u2019ll see you at dinner.\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Joe: Did you find them?\r\nDanny: Jup, I did. But uhm let\u2019s
+      have dinner. They\u2019ll be here, sometime next century I think. I don\u2019t
+      care.\r"
+    TextPrintInterval: 1
+    Keuzes: []

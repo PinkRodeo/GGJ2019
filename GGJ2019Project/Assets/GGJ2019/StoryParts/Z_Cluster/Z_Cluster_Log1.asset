@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Z_Cluster_Log1
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Theus: From hosts to Home Fleet, we\u2019re settling in the designated
+      sector, but we ran into an unexpected problem with the portal. The Rift isn\u2019t
+      safe for transport without major repairs. I repeat the Rift isn't safe."
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Danny: Any luck?\r\nTheus: Nope, no response. Not even on the older
+      broadcasts.\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Danny: So, I\u2019m done looking after the dog, I\u2019ve construction
+      duty. \r\nTheus: I\u2019m done for today\u2026\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Danny: Good\u2026\r\nTheus: No Gofer No!\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Danny: See you at dinner.\r\nTheus: Thanks\u2026 yea\u2026 see you
+      then. You\u2019re happy Goof, we\u2019re even now? You do know you\u2019re not
+      a pup anymore right. \r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "I\u2019m talking to my dog. At least you give a response.\r\nGofer:
+      [Barks]\r"
+    TextPrintInterval: 1
+    Keuzes: []

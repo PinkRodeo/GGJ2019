@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Z_Cluster_Log3
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: 'Otto: To all who are here today and all who can hear us out there
+      in the void, welcome. We gathered here for the marriage of Yasemin and Lee.'
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Otto: Before we begin, is there anyone with us that wants to object
+      to the union of these\u2026\r\nDanny: Hell no! Get to the good part already.
+      \r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Otto: Very well. Yasemin\u2026\r\nYasemin: Yes!\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Otto: Lee, do you take Yasemin\u2026\r\nLee: Yes!\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: 'Otto: Alright alright. I now pronounce you man and wife by the power
+      bestowed upon me by the Home Fleet and all that junk. Kiss already you two!'
+    TextPrintInterval: 1
+    Keuzes: []

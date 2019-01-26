@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Y_Cluster_Log3
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: 'Linn: Home Fleet, this is uh. This is Linn, host number, heck which
+      number was I, nevermind. I failed to contact the others in the one sector.'
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "My lack of fuel stranded me in this sector. I request a rescue crew
+      for them, to check if they\u2019re alright, their last message was\u2026 worrying."
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Passing by this place would be nice if you\u2019re done there. The
+      flowers are blooming at the moment. And I got berries to grow, if you believe
+      it or not."
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Enough to feed the rest of the Home Fleet soon, I\u2019m sure."
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: '(You): All this time by herself, how long till the others contacted
+      her?'
+    TextPrintInterval: 1
+    Keuzes: []

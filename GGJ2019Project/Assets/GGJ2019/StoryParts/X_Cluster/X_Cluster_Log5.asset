@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: X_Cluster_Log5
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Aziz: How much left?\r\nEmma: 3 minutes. You?\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Aziz: A little less\u2026\r\nAziz: At least we have a hell of a
+      view, right?\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: Can\u2019t argue with that. That Titan is a tricky one. \r\nAziz:
+      Took us by surprise after all. I think we can still take him though."
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: Sure you can, tough guy. \r\nAziz: Better than waiting I guess.
+      Want to give it a try?\r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: Let\u2019s say hi to him.[...]"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: [...] He doesn\u2019t seem that big out here. \r\nAziz: HEY!
+      TITAN! Fuck you! \r"
+    TextPrintInterval: 1
+    Keuzes: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "Emma: [laughs] We had a good run didn\u2019t we?\r\nAziz: We sure
+      did. We\u2019ll get him next time.\r"
+    TextPrintInterval: 1
+    Keuzes: []
