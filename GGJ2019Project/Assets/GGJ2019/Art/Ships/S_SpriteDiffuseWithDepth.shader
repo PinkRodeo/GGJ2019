@@ -18,7 +18,7 @@ Shader "Sprites/DiffuseWithDepth"
     {
         Tags
         {
-            "Queue"="AlphaTest"
+            "Queue"="Transparent"
             "IgnoreProjector"="True"
             "RenderType"="Transparent"
             "PreviewType"="Plane"
