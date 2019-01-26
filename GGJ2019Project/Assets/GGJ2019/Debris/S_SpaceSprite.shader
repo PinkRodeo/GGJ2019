@@ -133,8 +133,7 @@ Shader "Space/SpaceSprite"
 
 			if (IN.highlightSize > 0.00001)
 			{
-				c = lerp(c, IN.highlightColor, (1 - lightMask.a));
-
+				c.rgb = lerp(c.rgb, IN.highlightColor.rgb, (1 - lightMask.a));
 			}
             
 			//SampleSpriteTexture (IN.uv_MainTex) * IN.color;

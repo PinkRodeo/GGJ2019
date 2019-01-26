@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using FMODUnity;
 
 public enum E_GrappleState
 {
@@ -32,6 +33,8 @@ public class GrappleClaw : MonoBehaviour
 			switch (value)
 			{
 				case E_GrappleState.Retracted:
+					currentTarget = null;
+
 					foreach (var tween in _animationTweens)
 					{
 						tween.Kill();
@@ -65,12 +68,15 @@ public class GrappleClaw : MonoBehaviour
 
 					break;
 				case E_GrappleState.Connecting:
-
+					sfx_hitTarget.Play();
 					break;
 				case E_GrappleState.Retracting:
+					sfx_reelTargetIn.Play();
 
 					break;
 				case E_GrappleState.Docked:
+					sfx_reelTargetIn.Stop();
+					sfx_hitReeledInTarget.Play();
 
 					break;
 				default:
@@ -79,6 +85,8 @@ public class GrappleClaw : MonoBehaviour
 			}
 		}
 	}
+
+	public ClawTarget currentTarget { get; private set; }
 
 	public RectTransform rect_transform;
 
@@ -105,6 +113,10 @@ public class GrappleClaw : MonoBehaviour
 	public float preferredDistance;
 	public float tightness = 300f;
 	public float damping = 200f;
+
+	public StudioEventEmitter sfx_hitTarget;
+	public StudioEventEmitter sfx_reelTargetIn;
+	public StudioEventEmitter sfx_hitReeledInTarget;
 
 	protected void Awake()
 	{
@@ -231,37 +243,48 @@ public class GrappleClaw : MonoBehaviour
 
 	protected void OnCollisionEnter2D(Collision2D p_collision)
 	{
-		//Debug.Log("Triggered the claw");
+		Debug.Log("Triggered the claw");
 
-		if (p_collision.otherCollider.tag == ClawTarget.TAG || true)
+		if (p_collision.collider.tag != ClawTarget.TAG)
 		{
-			grappleState = E_GrappleState.Connecting;
-
-			SetCollisionEnabled(false);
-			_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
-
-			var currentPos = rect_transform.position;
-			var targetPos = p_collision.GetContact(0).point - _fireDirection * 0.2f;
-
-			//DebugExtension.DebugArrow(collision.GetContact(0).point, collision.GetContact(0).normal * 10f, Color.red, 10f, true);
-
-			this._currentRotation = rect_transform.rotation;
-			var hitNormal = p_collision.GetContact(0).normal;
-			var normalRotation = Quaternion.Euler(0, 0, Mathf.Atan2(hitNormal.y, hitNormal.x) * 180f / Mathf.PI - 90f);
-			this._targetRotation = Quaternion.Lerp(_currentRotation, normalRotation, 0.5f);
-
-			_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
-			var tween = DOTween.To(() => { return currentPos; }, (Vector3 vec) => { rect_transform.position = vec; }, targetPos, AttachAnimationLength).SetEase(Ease.InExpo);
-
-			tween.onComplete += () =>
-			{
-				Debug.Log("Attached the claw");
-				_trailRenderer.emitting = false;
-				grappleState = E_GrappleState.Retracting;
-			};
-
-			_animationTweens.Add(tween);
+			Debug.Log("Not valid target");
+			Debug.Log(p_collision.collider.tag);
+			return;
 		}
+
+		grappleState = E_GrappleState.Connecting;
+		currentTarget = p_collision.collider.GetComponent<ClawTarget>();
+
+		SetCollisionEnabled(false);
+		_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
+
+		var currentPos = rect_transform.position;
+		var targetPos = p_collision.GetContact(0).point - _fireDirection * 0.2f;
+
+		//DebugExtension.DebugArrow(collision.GetContact(0).point, collision.GetContact(0).normal * 10f, Color.red, 10f, true);
+
+		this._currentRotation = rect_transform.rotation;
+		var hitNormal = p_collision.GetContact(0).normal;
+		var normalRotation = Quaternion.Euler(0, 0, Mathf.Atan2(hitNormal.y, hitNormal.x) * 180f / Mathf.PI - 90f);
+		this._targetRotation = Quaternion.Lerp(_currentRotation, normalRotation, 0.5f);
+
+		_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
+		var tween = DOTween.To(() => { return currentPos; }, (Vector3 vec) => { rect_transform.position = vec; }, targetPos, AttachAnimationLength).SetEase(Ease.InExpo);
+
+		tween.onComplete += () =>
+		{
+			Debug.Log("Attached the claw");
+			_trailRenderer.emitting = false;
+			grappleState = E_GrappleState.Retracting;
+		};
+
+		_animationTweens.Add(tween);
+		
+	}
+
+	public void ArrivedAtTarget()
+	{
+		grappleState = E_GrappleState.Docked;
 	}
 
 	public void SetClosedVisual(float p_alpha)

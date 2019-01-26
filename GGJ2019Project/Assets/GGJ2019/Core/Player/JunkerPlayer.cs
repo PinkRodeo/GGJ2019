@@ -60,4 +60,23 @@ public class JunkerPlayer : MonoBehaviour
 
         AddVelocity(input * 10f);
     }
+
+	protected void OnCollisionEnter2D(Collision2D p_collision)
+	{
+		//Debug.Log("Triggered the claw");
+
+		if (p_collision.collider.tag != ClawTarget.TAG)
+		{
+			return;
+		}
+		var hitClawTarget = p_collision.collider.GetComponent<ClawTarget>();
+		if (JunkerGameMode.instance.claw.currentTarget != hitClawTarget)
+		{
+			return;
+		}
+
+		JunkerGameMode.instance.claw.ArrivedAtTarget();
+
+
+	}
 }
