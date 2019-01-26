@@ -16,7 +16,7 @@ MonoBehaviour:
   HasPlatforms: 0
   sourceProjectPath: 
   SourceProjectPathUnformatted: 
-  SourceBankPathUnformatted: S:\Projects\GGJ2019\FMODAssets
+  SourceBankPathUnformatted: ..\FMODAssets
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -57,5 +57,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: 
+  MasterBanks: []
   Banks: []
