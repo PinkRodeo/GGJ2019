@@ -51,6 +51,8 @@ public class GrappleClaw : MonoBehaviour
 					rigidBody.simulated = false;
 
 					_parentConstraint.enabled = true;
+					fixedJoint.connectedBody = null;
+					fixedJoint.enabled = false;
 					break;
 				case E_GrappleState.Targeting:
 					_parentConstraint.enabled = false;
@@ -69,23 +71,31 @@ public class GrappleClaw : MonoBehaviour
 
 					break;
 				case E_GrappleState.Connecting:
+					rigidBody.simulated = true;
+
 					sfx_hitTarget.Play();
 					break;
 				case E_GrappleState.Retracting:
+					rigidBody.simulated = true;
+
 					sfx_reelTargetIn.Play();
 
 					break;
 				case E_GrappleState.Docked:
+					fixedJoint.connectedBody = null;
+					fixedJoint.enabled = false;
+					rigidBody.simulated = false;
+
 					sfx_reelTargetIn.Stop();
 					sfx_hitReeledInTarget.Play();
+
+					_parentConstraint.enabled = true;
 
 					break;
 				case E_GrappleState.Releasing:
 					if (JunkerGameMode.instance.player.fixedJoint.connectedBody != null)
 					{
-						Debug.Log("Removed a source");
-						JunkerGameMode.instance.player.fixedJoint.enabled = false;
-						JunkerGameMode.instance.player.fixedJoint.connectedBody = null;
+						JunkerGameMode.instance.player.Detach();
 					}
 
 					grappleState = E_GrappleState.Retracted;
@@ -100,6 +110,7 @@ public class GrappleClaw : MonoBehaviour
 	public ClawTarget currentTarget { get; private set; }
 
 	public RectTransform rect_transform;
+	public FixedJoint2D fixedJoint;
 
 	private E_GrappleState _grappleState = E_GrappleState.Retracted;
 
@@ -131,10 +142,12 @@ public class GrappleClaw : MonoBehaviour
 
 	protected void Awake()
 	{
+
 		_animationTweens = new List<Tweener>();
 
 		rect_transform = this.transform as RectTransform;
 		rigidBody = this.GetComponent<Rigidbody2D>();
+		fixedJoint = this.GetComponent<FixedJoint2D>();
 
 		_parentConstraint = this.GetComponent<ParentConstraint>();
 		_trailRenderer = this.GetComponent<TrailRenderer>();
@@ -151,6 +164,7 @@ public class GrappleClaw : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		var player = JunkerGameMode.instance.player;
 		var worldTargetPos = JunkerGameMode.instance.cameraManager.currentCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -JunkerGameMode.instance.cameraManager.cameraDistance));
 
 		DebugExtension.DebugPoint(worldTargetPos, 10f, 0f, false);
@@ -191,6 +205,14 @@ public class GrappleClaw : MonoBehaviour
 				break;
 			case E_GrappleState.Connecting:
 
+				// dead facing code
+				//var dist = new Vector2((rect_transform.position - playerPos).x, (rect_transform.position - playerPos).y);
+				//var dir = dist.normalized;
+
+				//var targetRotation = Angle(dir);
+				//var currentRotation = player.rigidBody.rotation;
+
+				//player.rigidBody.MoveRotation(Mathf.MoveTowardsAngle(currentRotation, targetRotation, 200f));
 				break;
 			case E_GrappleState.Retracting:
 				var hookPosition = rect_transform.position;
@@ -222,6 +244,51 @@ public class GrappleClaw : MonoBehaviour
 
 				break;
 		}
+
+		UpdateTrail();
+	}
+
+	public static float Angle(Vector2 p_vector2)
+	{
+		if (p_vector2.x < 0)
+		{
+			return 360 - (Mathf.Atan2(p_vector2.x, p_vector2.y) * Mathf.Rad2Deg * -1);
+		}
+		else
+		{
+			return Mathf.Atan2(p_vector2.x, p_vector2.y) * Mathf.Rad2Deg;
+		}
+	}
+
+	private void UpdateTrail()
+	{
+		var _trailPositions = new Vector3[_trailRenderer.positionCount];
+		var indexes = _trailRenderer.GetPositions(_trailPositions);
+
+		var clawPos = rect_transform.position;
+		var playerPos = JunkerGameMode.instance.player.rect_transform.position;
+
+		float totalIndexes = indexes;
+
+
+		for (int i = 0; i < indexes; i++)
+		{
+			float index = i;
+			index /= indexes;
+			float factor = Mathf.Pow(((index - 0.5f) * 2f), 2f);
+
+			if (factor < 0.5f)
+			{
+				_trailPositions[i] = Vector3.Lerp(_trailPositions[i], playerPos, factor*0.5f+0.1f);
+			}
+			else
+			{
+				_trailPositions[i] = Vector3.Lerp(_trailPositions[i], clawPos, factor*0.5f+0.1f);
+
+			}
+		}
+
+		_trailRenderer.SetPositions(_trailPositions);
 	}
 
 	public void FireOff(Vector2 p_direction, float p_velocity)
@@ -266,6 +333,10 @@ public class GrappleClaw : MonoBehaviour
 
 	protected void OnCollisionEnter2D(Collision2D p_collision)
 	{
+		if (grappleState != E_GrappleState.Travelling)
+			return;
+		
+
 		Debug.Log("Triggered the claw");
 
 		if (p_collision.collider.tag != ClawTarget.TAG)
@@ -281,6 +352,9 @@ public class GrappleClaw : MonoBehaviour
 		SetCollisionEnabled(false);
 		_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
 
+		fixedJoint.connectedBody = currentTarget.GetComponent<Rigidbody2D>();
+		fixedJoint.enabled = true;
+
 		var currentPos = rect_transform.position;
 		var targetPos = p_collision.GetContact(0).point - _fireDirection * 0.2f;
 
@@ -293,6 +367,11 @@ public class GrappleClaw : MonoBehaviour
 
 		_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
 		var tween = DOTween.To(() => { return currentPos; }, (Vector3 vec) => { rect_transform.position = vec; }, targetPos, AttachAnimationLength).SetEase(Ease.InExpo);
+
+		tween.onUpdate += () =>
+		{
+			tween.target = p_collision.GetContact(0).point - _fireDirection * 0.2f;
+		};
 
 		tween.onComplete += () =>
 		{

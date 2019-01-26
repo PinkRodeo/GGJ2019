@@ -129,7 +129,9 @@ Shader "Space/SpaceSprite"
 			}
 			c.a  = oldAlpha *  IN.color.a;
 
-				fixed4 lightMask = blur(_MainTex, IN.uv_MainTex + float2(cos(IN.lightDirection),sin(IN.lightDirection))*IN.highlightSize, IN.blurAmount);
+			float2 rotation = mul(float4(cos(IN.lightDirection),sin(IN.lightDirection), 0,0), unity_ObjectToWorld).xy;
+			rotation = rotation *IN.highlightSize;
+			fixed4 lightMask = blur(_MainTex, IN.uv_MainTex + rotation, IN.blurAmount);
 
 			if (IN.highlightSize > 0.00001)
 			{

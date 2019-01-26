@@ -22,11 +22,13 @@ MonoBehaviour:
   - {fileID: 114466122349720528}
   - {fileID: 114506040850286400}
   - {fileID: 114854893329613842}
+  - {fileID: 114135125772661102}
+  - {fileID: 114965252123462592}
   MasterBanks:
   - {fileID: 114043370990250798}
   StringsBanks:
   - {fileID: 114346038070931978}
-  stringsBankWriteTime: 636841111604059436
+  stringsBankWriteTime: 636841197169697698
   cacheVersion: 3
 --- !u!114 &114043370990250798
 MonoBehaviour:
@@ -41,11 +43,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: S:\Projects\GGJ2019\FMODAssets\Desktop\Master Bank.bank
-  lastModified: 636841111606458181
+  lastModified: 636841197190325595
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1334048
+    Value: 1972512
   Exists: 1
 --- !u!114 &114068713543632778
 MonoBehaviour:
@@ -70,6 +72,29 @@ MonoBehaviour:
   MinDistance: 6.4
   MaxDistance: 20
   Length: 100
+--- !u!114 &114135125772661102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_Hook_ShootHook
+  guid: 78d5477cec9e0341b31e663f7af68b90
+  Banks:
+  - {fileID: 114043370990250798}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 6.4
+  MaxDistance: 35
+  Length: 2209
 --- !u!114 &114142361724738494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,11 +154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: ..\FMODAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636841111604059436
+  lastModified: 636841197169697698
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1028
+    Value: 1116
   Exists: 1
 --- !u!114 &114347363026276914
 MonoBehaviour:
@@ -179,7 +204,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 6.4
-  MaxDistance: 20
+  MaxDistance: 35
   Length: 2000
 --- !u!114 &114466122349720528
 MonoBehaviour:
@@ -202,7 +227,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 10
-  MaxDistance: 15
+  MaxDistance: 35
   Length: 2000
 --- !u!114 &114506040850286400
 MonoBehaviour:
@@ -225,7 +250,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 6.4
-  MaxDistance: 20
+  MaxDistance: 35
   Length: 100
 --- !u!114 &114558423870427994
 MonoBehaviour:
@@ -355,7 +380,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 6.4
-  MaxDistance: 20
+  MaxDistance: 35
   Length: 2000
 --- !u!114 &114889044242757332
 MonoBehaviour:
@@ -379,4 +404,27 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 10
   MaxDistance: 15
+  Length: 2000
+--- !u!114 &114965252123462592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SFX_DetachAfterWaltz
+  guid: 8633de097cf5404194757c6760289369
+  Banks:
+  - {fileID: 114043370990250798}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 6.4
+  MaxDistance: 35
   Length: 2000

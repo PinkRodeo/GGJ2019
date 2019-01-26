@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8843489929539714653}
   - component: {fileID: 9204293304174082095}
   - component: {fileID: 6870303213502304187}
+  - component: {fileID: 516302526778001727}
   m_Layer: 8
   m_Name: GrappleClaw
   m_TagString: Untagged
@@ -141,9 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rect_transform: {fileID: 0}
+  fixedJoint: {fileID: 0}
   clawPivotL: {fileID: 5811896637607620398}
   clawPivotR: {fileID: 1304062852726599460}
-  AttachAnimationLength: 0.4
+  AttachAnimationLength: 0.3
   preferredDistance: 0
   tightness: 300
   damping: 200
@@ -358,6 +360,24 @@ ParentConstraint:
   m_Sources:
   - sourceTransform: {fileID: 0}
     weight: 1
+--- !u!255 &516302526778001727
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630760786085198687}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1 &3981909697990379107
 GameObject:
   m_ObjectHideFlags: 0
