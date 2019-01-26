@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5702060452532019375}
   - component: {fileID: 2000852340409963676}
   - component: {fileID: 8052768673919753676}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: ClawTarget_Dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409036925068040435}
   - component: {fileID: 2784822396745001751}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

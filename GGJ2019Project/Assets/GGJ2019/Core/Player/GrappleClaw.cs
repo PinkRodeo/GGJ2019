@@ -1,129 +1,282 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using UnityEngine.Animations;
+
+public enum E_GrappleState
+{
+	Retracted,
+	Targeting,
+	Travelling,
+	Connecting,
+	Retracting,
+	Docked,
+}
 
 public class GrappleClaw : MonoBehaviour
 {
-  
-    public RectTransform rect_transform;
-    private Rigidbody2D rigidBody;
-    private bool _isEnabled = false;
 
-    public RectTransform clawPivotL;
-    public RectTransform clawPivotR;
+	public E_GrappleState grappleState
+	{
+		get
+		{
+			return _grappleState;
+		}
+		set
+		{
+			var oldValue = _grappleState;
+			var inputState = value;
+			_grappleState = value;
 
-    private Vector2 _fireDirection;
+			switch (value)
+			{
+				case E_GrappleState.Retracted:
+					foreach (var tween in _animationTweens)
+					{
+						tween.Kill();
+					}
+					_animationTweens.Clear();
 
-    public float AttachAnimationLength = .4f;
-    protected void Awake()
-    {
-        rect_transform = this.transform as RectTransform;
-        rigidBody = this.GetComponent<Rigidbody2D>();
+					_trailRenderer.Clear();
+					_trailRenderer.emitting = false;
 
-        SetEnabled(false);  
-    }
+					rigidBody.velocity = Vector2.zero;
+					rigidBody.angularVelocity = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        JunkerGameMode.instance.claw = this;
-    }
+					rigidBody.simulated = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        var worldTargetPos = JunkerGameMode.instance.cameraManager.currentCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -JunkerGameMode.instance.cameraManager.cameraDistance));
+					_parentConstraint.enabled = true;
+					break;
+				case E_GrappleState.Targeting:
+					_parentConstraint.enabled = false;
 
-        DebugExtension.DebugPoint(worldTargetPos, 10f, 0f, false);
-        var playerPos = JunkerGameMode.instance.player.rect_transform.position;
-        DebugExtension.DebugArrow(playerPos, worldTargetPos - playerPos);
+					rigidBody.velocity = Vector2.zero;
+					rigidBody.angularVelocity = 0f;
 
+					rigidBody.simulated = false;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            //Debug.Log("Start move");
+					break;
+				case E_GrappleState.Travelling:
+					_trailRenderer.Clear();
+					_trailRenderer.emitting = true;
 
-            //var velocity = new Vector2((worldTargetPos - playerPos).x, (worldTargetPos - playerPos).y);
-            //JunkerGameMode.instance.player.AddVelocity(velocity);
+					rigidBody.simulated = true;
 
-            FireOff(new Vector2((worldTargetPos - playerPos).x, (worldTargetPos - playerPos).y).normalized, 6f);
-        }
+					break;
+				case E_GrappleState.Connecting:
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            SetEnabled(false);
-        }
-    }
+					break;
+				case E_GrappleState.Retracting:
 
-    public void FireOff(Vector2 direction, float velocity)
-    {
-        if (_isEnabled)
-        {
-            Debug.LogWarning("Tried to fire off the GrappleClaw while it was still active");
-            SetEnabled(false);
-            //return;
-        }
+					break;
+				case E_GrappleState.Docked:
 
-        _fireDirection = direction;
-        SetClosedVisual(0f);
-        SetEnabled(true);
+					break;
+				default:
 
-        rect_transform.position = JunkerGameMode.instance.player.transform.position;
-        rect_transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * 180f / Mathf.PI - 90f);
+					break;
+			}
+		}
+	}
 
-        rigidBody.AddForce(direction * velocity, ForceMode2D.Impulse);
-    }
+	public RectTransform rect_transform;
 
-    public void SetEnabled(bool p_isEnabled)
-    {
-        _isEnabled = p_isEnabled;
+	private E_GrappleState _grappleState = E_GrappleState.Retracted;
 
 
-        if (p_isEnabled == false)
-        {
-            rigidBody.velocity = Vector2.zero;
-            rigidBody.angularVelocity = 0f;
-        }
+	private Rigidbody2D rigidBody;
+	private bool _isEnabled = false;
 
-        rigidBody.simulated = p_isEnabled;
+	public RectTransform clawPivotL;
+	public RectTransform clawPivotR;
 
-    }
-    
+	private Vector2 _fireDirection;
 
-    protected void OnCollisionEnter2D(Collision2D collision)
-    {
-        SetEnabled(false);
+	public float AttachAnimationLength = .4f;
+	private Quaternion _currentRotation;
+	private Quaternion _targetRotation;
 
-        Debug.Log("Triggered the claw");
+	private TrailRenderer _trailRenderer;
+	private ParentConstraint _parentConstraint;
 
-        if (collision.otherCollider.tag == ClawTarget.TAG || true)
-        {
-            Debug.Log("Hit a valid claw target");
+	private List<Tweener> _animationTweens;
 
-            SetEnabled(false);
-            //SetClosedVisual(1f);
-            DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo);
+	public float preferredDistance;
+	public float tightness = 300f;
+	public float damping = 200f;
 
-            var currentPos = rect_transform.position;
-            var targetPos = collision.GetContact(0).point - _fireDirection*0.2f;
+	protected void Awake()
+	{
+		_animationTweens = new List<Tweener>();
+
+		rect_transform = this.transform as RectTransform;
+		rigidBody = this.GetComponent<Rigidbody2D>();
+
+		_parentConstraint = this.GetComponent<ParentConstraint>();
+		_trailRenderer = this.GetComponent<TrailRenderer>();
+
+		SetCollisionEnabled(false);
+	}
+
+	// Start is called before the first frame update
+	void Start()
+	{
+		JunkerGameMode.instance.claw = this;
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+		var worldTargetPos = JunkerGameMode.instance.cameraManager.currentCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -JunkerGameMode.instance.cameraManager.cameraDistance));
+
+		DebugExtension.DebugPoint(worldTargetPos, 10f, 0f, false);
+		var playerPos = JunkerGameMode.instance.player.rect_transform.position;
+		DebugExtension.DebugArrow(playerPos, worldTargetPos - playerPos);
 
 
-            DOTween.To(() => { return currentPos; }, (Vector3 vec) => { rect_transform.position = vec; }, targetPos, AttachAnimationLength).SetEase(Ease.InExpo).onComplete += ()=>
-            {
-                Debug.Log("Attached the claw");
-            };
-        }
-    }
+		if (Input.GetMouseButtonDown(0))
+		{
+			FireOff(new Vector2((worldTargetPos - playerPos).x, (worldTargetPos - playerPos).y).normalized, 6f);
+		}
 
-    public void SetClosedVisual(float alpha)
-    {
-        SetClawPivotAngle(Mathf.Lerp(0, 62f, alpha));
-    }
+		if (Input.GetMouseButtonDown(1))
+		{
+			grappleState = E_GrappleState.Retracted;
 
-    private void SetClawPivotAngle(float angle)
-    {
-        clawPivotL.localRotation = Quaternion.Euler(0, 0, -angle);
-        clawPivotR.localRotation = Quaternion.Euler(0, 0, angle);
-    }
+		}
+
+		switch (grappleState)
+		{
+			case E_GrappleState.Retracted:
+
+				break;
+			case E_GrappleState.Targeting:
+
+				break;
+			case E_GrappleState.Travelling:
+
+				break;
+			case E_GrappleState.Connecting:
+
+				break;
+			case E_GrappleState.Retracting:
+				var hookPosition = rect_transform.position;
+
+
+				var distance = new Vector2((rect_transform.position - playerPos).x, (rect_transform.position - playerPos).y);
+				var direction = distance.normalized;
+				DebugExtension.DebugArrow(playerPos, distance, Color.black, 0f, false);
+
+				distance -= distance.normalized * preferredDistance;
+				
+				// TODO: rigidbody for target
+				//var force = -distance * tightness - (damping * (JunkerGameMode.instance.player.rigidBody.velocity - b.rigidbody2D.velocity));
+				var force = distance * tightness - (damping * (JunkerGameMode.instance.player.rigidBody.velocity));
+
+				JunkerGameMode.instance.player.rigidBody.AddForce(force * Time.deltaTime, ForceMode2D.Force);
+				//b.rigidbody2D.AddForce(force * (Time.deltaTime * -1f), ForceMode2D.Force);
+
+
+
+				break;
+			case E_GrappleState.Docked:
+
+				break;
+			default:
+
+				break;
+		}
+	}
+
+	public void FireOff(Vector2 p_direction, float p_velocity)
+	{
+		if (grappleState != E_GrappleState.Retracted)
+		{
+			Debug.LogWarning("Tried to fire off the GrappleClaw while it was still active");
+
+			grappleState = E_GrappleState.Retracted;
+
+			//return;
+		}
+
+
+		grappleState = E_GrappleState.Targeting;
+
+		_fireDirection = p_direction;
+		SetClosedVisual(0f);
+		rect_transform.position = JunkerGameMode.instance.player.transform.position;
+		rect_transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(p_direction.y, p_direction.x) * 180f / Mathf.PI - 90f);
+
+		grappleState = E_GrappleState.Travelling;
+		SetCollisionEnabled(true);
+		rigidBody.AddForce(p_direction * p_velocity, ForceMode2D.Impulse);
+	}
+
+	public void SetCollisionEnabled(bool p_isEnabled)
+	{
+		_isEnabled = p_isEnabled;
+
+
+		if (p_isEnabled == false)
+		{
+			rigidBody.velocity = Vector2.zero;
+			rigidBody.angularVelocity = 0f;
+		}
+
+		rigidBody.simulated = p_isEnabled;
+
+	}
+
+
+	protected void OnCollisionEnter2D(Collision2D p_collision)
+	{
+		//Debug.Log("Triggered the claw");
+
+		if (p_collision.otherCollider.tag == ClawTarget.TAG || true)
+		{
+			grappleState = E_GrappleState.Connecting;
+
+			SetCollisionEnabled(false);
+			_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
+
+			var currentPos = rect_transform.position;
+			var targetPos = p_collision.GetContact(0).point - _fireDirection * 0.2f;
+
+			//DebugExtension.DebugArrow(collision.GetContact(0).point, collision.GetContact(0).normal * 10f, Color.red, 10f, true);
+
+			this._currentRotation = rect_transform.rotation;
+			var hitNormal = p_collision.GetContact(0).normal;
+			var normalRotation = Quaternion.Euler(0, 0, Mathf.Atan2(hitNormal.y, hitNormal.x) * 180f / Mathf.PI - 90f);
+			this._targetRotation = Quaternion.Lerp(_currentRotation, normalRotation, 0.5f);
+
+			_animationTweens.Add(DOTween.To((float value) => { SetClosedVisual(value); }, 0f, 1f, AttachAnimationLength).SetEase(Ease.InExpo));
+			var tween = DOTween.To(() => { return currentPos; }, (Vector3 vec) => { rect_transform.position = vec; }, targetPos, AttachAnimationLength).SetEase(Ease.InExpo);
+
+			tween.onComplete += () =>
+			{
+				Debug.Log("Attached the claw");
+				_trailRenderer.emitting = false;
+				grappleState = E_GrappleState.Retracting;
+			};
+
+			_animationTweens.Add(tween);
+		}
+	}
+
+	public void SetClosedVisual(float p_alpha)
+	{
+		SetClawPivotAngle(Mathf.Lerp(0, 62f, p_alpha));
+	}
+
+	public void SetNormalAttenuation(float p_alpha)
+	{
+		rect_transform.rotation = Quaternion.Lerp(_currentRotation, _targetRotation, p_alpha);
+	}
+
+	private void SetClawPivotAngle(float p_angle)
+	{
+		clawPivotL.localRotation = Quaternion.Euler(0, 0, -p_angle);
+		clawPivotR.localRotation = Quaternion.Euler(0, 0, p_angle);
+	}
 }

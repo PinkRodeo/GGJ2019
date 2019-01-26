@@ -5,41 +5,41 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
 
-    public float cameraDistance
-    {
-        get
-        {
-            return _transform.position.z;
-        }
-    }
+	public float cameraDistance
+	{
+		get
+		{
+			return _transform.position.z;
+		}
+	}
 
-    public Camera currentCamera
-    {
-        get
-        {
-            return _currentCamera;
-        }
-    }
+	public Camera currentCamera
+	{
+		get
+		{
+			return _currentCamera;
+		}
+	}
 
-    private Transform _transform;
+	private Transform _transform;
 
-    private Camera _currentCamera;
+	private Camera _currentCamera;
 
-    protected void Awake()
-    {
-        _transform = this.transform;
-    }
+	protected void Awake()
+	{
+		_transform = this.transform;
+	}
 
-    void Start()
-    {
-        _currentCamera = Camera.main;
+	void Start()
+	{
+		_currentCamera = Camera.main;
 
-        JunkerGameMode.instance.cameraManager = this;
-    }
+		JunkerGameMode.instance.cameraManager = this;
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		
+	}
 }

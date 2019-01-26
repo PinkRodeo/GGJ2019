@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class ClawTarget : MonoBehaviour
 {
-    public static string TAG = "ClawTarget";
+	public static string TAG = "ClawTarget";
 
-    protected void Awake()
-    {
-        gameObject.tag = TAG;
-    }
+	protected void Awake()
+	{
+		gameObject.tag = TAG;
+	}
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		
+	}
 }
