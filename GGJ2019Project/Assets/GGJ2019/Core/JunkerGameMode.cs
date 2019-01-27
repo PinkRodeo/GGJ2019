@@ -11,6 +11,8 @@ public class JunkerState
 	public bool x_Recovered = false;
 	public bool y_Recovered = false;
 	public bool z_Recovered = false;
+
+    public List<string> FinishedStoryParts = new List<string>();
 }
 
 public class JunkerGameMode : MonoBehaviour
@@ -101,6 +103,24 @@ public class JunkerGameMode : MonoBehaviour
 	{
 		OnStartLevel();
 	}
+
+    public static bool HasDoneStoryPart(string storyToFind)
+    {
+        foreach (string saveName in junkerState.FinishedStoryParts)
+        {
+            if (saveName == storyToFind)
+                return true;
+        }
+        return false;
+    }
+
+    public static void FinishedStoryPart(string story)
+    {
+        if (junkerState.FinishedStoryParts.Contains(story))
+            return;
+
+        junkerState.FinishedStoryParts.Add(story);
+    }
 
 	public void OnStartLevel()
 	{
