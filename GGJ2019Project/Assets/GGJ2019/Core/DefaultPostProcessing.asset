@@ -86,17 +86,17 @@ MonoBehaviour:
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
-      lowPercent: 45
-      highPercent: 95
-      minLuminance: -5
+      lowPercent: 1
+      highPercent: 49.56957
+      minLuminance: -10
       maxLuminance: 1
-      keyValue: 0.25
-      dynamicKeyValue: 1
+      keyValue: 0.47
+      dynamicKeyValue: 0
       adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -10
-      logMax: 5
+      logMin: -9
+      logMax: 1
   bloom:
     m_Enabled: 1
     m_Settings:
@@ -304,7 +304,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       lut: {fileID: 0}
-      contribution: 1
+      contribution: 0.241
   chromaticAberration:
     m_Enabled: 1
     m_Settings:

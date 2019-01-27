@@ -86,6 +86,7 @@ public class SceneLoader : MonoBehaviour
 		ClearScene(E_Level.Rift);
 		SceneManager.LoadScene("L_Rift", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_Rift_Art", LoadSceneMode.Additive);
+		SceneManager.LoadScene("L_Rift_Level", LoadSceneMode.Additive);
 	}
 
 	public void LoadSceneX()

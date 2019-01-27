@@ -27,13 +27,13 @@ public class CameraManager : MonoBehaviour
 		}
 	}
 
-	private Transform _transform;
+	private RectTransform _transform;
 
 	private Camera _currentCamera;
 
 	protected void Awake()
 	{
-		_transform = this.transform;
+		_transform = this.transform as RectTransform;
 		musicComponent = GetComponent<StudioEventEmitter>();
 	}
 	
@@ -46,6 +46,7 @@ public class CameraManager : MonoBehaviour
 
 	void Start()
 	{
+		targetZoomLevel = zoomedOutDistance;
 		_currentCamera = Camera.main;
 
 		JunkerGameMode.instance.cameraManager = this;
@@ -63,15 +64,50 @@ public class CameraManager : MonoBehaviour
 		musicComponent.Event = levelData.levelMusic;
 
 		musicComponent.Play();
+
+		_currentCamera.DOShakeRotation(10f, 20, 4, 65f, false).SetLoops(-1);
 	}
 
 	// Update is called once per frame
-	void Update()
+	protected void Update()
 	{
 		musicComponent.SetParameter("X Completed", musicXComplete);
 		musicComponent.SetParameter("Y Completed", musicYComplete);
 		musicComponent.SetParameter("Z Completed", musicZComplete);
+
+		var scroll = Input.mouseScrollDelta.y;
+		zoomOffset += scroll * -0.25f;
+		zoomOffset = Mathf.Clamp(zoomOffset, -1, 1);
+
+		zoomOffset = Mathf.MoveTowards(zoomOffset, 0f, 1f / 12f * Time.deltaTime);
+
+		var factor = (targetZoomLevel - zoomedInDistance) / (zoomedOutDistance - zoomedInDistance);
+		var variIn = GetVar(zoomedInDistanceVar);
+		var variOut = GetVar(zoomedOutDistanceVar);
+
+
+		var currentPos = _transform.localPosition;
+		currentPos.z = -(targetZoomLevel + Mathf.Lerp(variIn, variOut, factor));
+		_transform.localPosition = currentPos;
 	}
+
+	private float GetVar(Vector2 zoomVar)
+	{
+		if (zoomOffset < 0)
+			return - Mathf.Lerp(0, zoomVar.x, zoomOffset * -1f);
+		else
+			return Mathf.Lerp(0, zoomVar.y, zoomOffset * 1f);
+	}
+
+	protected void FixedUpdate()
+	{
+
+		
+
+		
+	}
+
+
 
 	private Tween zoomTween;
 	private void CleanZoom()
@@ -86,9 +122,15 @@ public class CameraManager : MonoBehaviour
 
 
 	private bool b_ZoomingIn = false;
+	public Vector2 zoomedInDistanceVar = new Vector2(.5f, 2f);
+
 	public float zoomedInDistance = 7.5f;
-	public float zoomedOutDistance = 24.5f;
-	
+	public Vector2 zoomedOutDistanceVar = new Vector2(10f, 15f);
+	public float zoomedOutDistance = 65f;
+
+	private float targetZoomLevel;
+	private float zoomOffset = 0f;
+
 	public void ZoomIn()
 	{
 		if (b_ZoomingIn)
@@ -96,7 +138,8 @@ public class CameraManager : MonoBehaviour
 
 		b_ZoomingIn = true;
 		CleanZoom();
-		zoomTween = _transform.DOMoveZ(-zoomedInDistance, 0.8f, false).SetEase(Ease.OutBack);
+		var oldZoom = targetZoomLevel;
+		zoomTween = DOTween.To(()=> { return oldZoom; }, (float value)=> { targetZoomLevel = value; }, zoomedInDistance, 0.8f).SetEase(Ease.OutCirc);
 
 		musicComponent.SetParameter("Dancing", 1f);
 	}
@@ -108,7 +151,8 @@ public class CameraManager : MonoBehaviour
 
 		b_ZoomingIn = false;
 		CleanZoom();
-		zoomTween = _transform.DOMoveZ(-zoomedOutDistance, 0.8f, false).SetEase(Ease.OutBack);
+		var oldZoom = targetZoomLevel;
+		zoomTween = DOTween.To(() => { return oldZoom; }, (float value) => { targetZoomLevel = value; }, zoomedOutDistance, 0.8f).SetEase(Ease.OutBack);
 
 		musicComponent.SetParameter("Dancing", 0f);
 		zoomOutComponent.Play(); 
