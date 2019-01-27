@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: 
+  eventChain:
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: Use [LMB] to advance with your scrappers' hook.
+    TextPrintInterval: 1
+    Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: Use [RMB] to jettison away from any wreckage you're connected to.
+    TextPrintInterval: 1
+    Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
