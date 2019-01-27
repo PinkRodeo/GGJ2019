@@ -12,9 +12,32 @@ public class ClawTarget : MonoBehaviour
 	public ClawEvent OnShipDocked;
 	public ClawEvent OnShipUnDocked;
 
-	protected void Awake()
+	public bool bEnableLights = false;
+	public List<SpriteRenderer> lights = new List<SpriteRenderer>();
+
+	protected void OnValidate()
 	{
+		var sprites = GetComponentsInChildren<SpriteRenderer>();
+		lights.Clear();
+		foreach (var sprite in sprites)
+		{
+			if (sprite.tag == "Blinker")
+			{
+				lights.Add(sprite);
+				sprite.enabled = bEnableLights;
+			}
+		}
+
 		gameObject.tag = TAG;
+
+	}
+
+	public void SetLightsVisible(bool p_visible)
+	{
+		foreach (var light in lights)
+		{
+			light.enabled = p_visible;
+		}
 	}
 	
 	public void ClawConnect()
@@ -34,4 +57,6 @@ public class ClawTarget : MonoBehaviour
 		if (OnClawConnect != null)
 			OnShipUnDocked();
 	}
+
+	
 }
