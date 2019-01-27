@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GGJ2019/Levels/TheRift/L_Rift.unity
     guid: 7e5516bc76ba17346836a2e2bd45e6fa
+  - enabled: 1
+    path: Assets/GGJ2019/Levels/EndScreen.unity
+    guid: 4abae7f6a71d9da45bb561613529768c
   m_configObjects: {}

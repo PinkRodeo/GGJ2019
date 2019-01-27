@@ -27,11 +27,6 @@ public class DialogOnAwakeStarter : MonoBehaviour
             {
                 EventManager.AddEvent(item);
             }
-        if (DoOnce == true)
-        {
-            var clawTarget = GetComponent<ClawTarget>();
-            clawTarget.SetLightsVisible(DoOnce != DoneOnce || DoOnce == false);
-        }
     }
 
     private void Awake()

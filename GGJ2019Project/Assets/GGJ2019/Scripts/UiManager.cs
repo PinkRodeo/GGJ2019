@@ -156,18 +156,25 @@ public class UiManager : MonoBehaviour
         {
             if (panel.image != null)
             {
-                if (CurrentEvent.FadeTime == 0)
-                {
-                    panel.image.sprite = CurrentEvent.image;
-                    panel.image.color = new Color(1, 1, 1, 1);
-                }
-                else
+                if (CurrentEvent.FadeOutTime != 0)
                 {
                     Debug.Log("test");
                     panel.image.sprite = CurrentEvent.image;
                     panel.image.color = new Color(1, 1, 1, 1);
                     panel.image.DOKill(false);
-                    panel.image.DOColor(new Color(1, 1, 1, 0), CurrentEvent.FadeTime);
+                    panel.image.DOColor(new Color(1, 1, 1, 0), CurrentEvent.FadeOutTime);
+                   
+                }else if (CurrentEvent.FadeInTime != 0)
+                {
+                    panel.image.sprite = CurrentEvent.image;
+                    panel.image.color = new Color(1, 1, 1, 0);
+                    panel.image.DOKill(false);
+                    panel.image.DOColor(new Color(1, 1, 1, 1), CurrentEvent.FadeInTime);
+                }
+                else
+                {
+                    panel.image.sprite = CurrentEvent.image;
+                    panel.image.color = new Color(1, 1, 1, 1);
                 }
             }
         }

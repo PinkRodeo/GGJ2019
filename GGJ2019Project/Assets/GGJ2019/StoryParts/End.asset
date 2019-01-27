@@ -20,9 +20,10 @@ MonoBehaviour:
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
-    FadeTime: 0
+    FadeInTime: 0
+    FadeOutTime: 0
   - eventType: 2
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 615d429687ee1bf48ab2bde6ddedad55, type: 3}
     title: 
     description: '(You): Without warning I see a ship appear in my peripheral. And
       another and another. With bright flashes, an armada of makeshift vessels arrives
@@ -30,20 +31,32 @@ MonoBehaviour:
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
-    FadeTime: 0
+    FadeInTime: 0.2
+    FadeOutTime: 0
   - eventType: 2
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 615d429687ee1bf48ab2bde6ddedad55, type: 3}
     title: 
     description: 'Command: Home Fleet to hosts, Home Fleet to hosts. Do we have contact?'
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
-    FadeTime: 0
+    FadeInTime: 0
+    FadeOutTime: 0
   - eventType: 2
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 615d429687ee1bf48ab2bde6ddedad55, type: 3}
     title: 
     description: '(You): Copy command. Welcome home. '
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
-    FadeTime: 0
+    FadeInTime: 0
+    FadeOutTime: 0
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: 
+    TextPrintInterval: 0
+    Choices: []
+    newLevelToLoad: 7
+    FadeInTime: 0
+    FadeOutTime: 0

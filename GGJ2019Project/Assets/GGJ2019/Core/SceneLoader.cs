@@ -14,6 +14,7 @@ public enum E_Level
 	Y,
 	Z,
 	None,
+    EndGame
 }
 
 [System.Serializable]
@@ -92,6 +93,14 @@ public class SceneLoader : MonoBehaviour
 
 		Enter();
 	}
+
+    public void LoadEndGameScene()
+    {
+        ClearScene(E_Level.EndGame);
+        SceneManager.LoadScene("EndScreen", LoadSceneMode.Additive);
+
+        Enter();
+    }
 
 	public void LoadSceneIntro()
 	{
