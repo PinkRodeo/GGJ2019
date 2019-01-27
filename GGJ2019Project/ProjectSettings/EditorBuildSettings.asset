@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/GGJ2019/Levels/X/L_X_Art.unity
     guid: 311aee99c290743999a70510bd9f4114
   - enabled: 1
+    path: Assets/GGJ2019/Levels/Y/L_Y_Level.unity
+    guid: 883e7a8ffa1a92e4c918c96a49a6a6b7
+  - enabled: 1
+    path: Assets/GGJ2019/Levels/Z/L_Z_Level.unity
+    guid: 23c837d085ceb884cb127f4315ed4abc
+  - enabled: 1
     path: Assets/GGJ2019/Levels/X/L_X_Level.unity
     guid: c055e7356e585a34aaf6686ea0efbe5b
   - enabled: 1
