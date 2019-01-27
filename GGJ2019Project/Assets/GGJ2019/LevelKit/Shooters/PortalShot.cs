@@ -13,8 +13,11 @@ public class PortalShot : MonoBehaviour
 
 	private PortalTarget _portalTarget;
 
+	private StudioEventEmitter sfx_PortalShot;
+
 	protected void Awake()
 	{
+		sfx_PortalShot = GetComponent<StudioEventEmitter>();
 		_portalTarget = GetComponentInChildren<PortalTarget>();
 		var pos = _portalTarget.transform.position;
 		pos.z = 0f;
@@ -48,6 +51,8 @@ public class PortalShot : MonoBehaviour
 		var currentPos = player.rect_transform.position;
 		var tween = DOTween.To(() => { return currentPos; }, (Vector3 vec) => { player.rect_transform.position = vec; }, _portalTarget.transform.position, length * 0.03f).SetEase(Ease.InOutCubic);
 		Camera.main.DOShakePosition(0.6f, 3, 10, 90f, true);
+
+		sfx_PortalShot.Play();
 
 		float seconds = 0f;
 		bool startedFade = false;

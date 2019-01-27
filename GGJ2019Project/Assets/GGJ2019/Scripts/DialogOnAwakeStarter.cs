@@ -15,15 +15,12 @@ public class DialogOnAwakeStarter : MonoBehaviour
         if (DoOnce == true && DoOnce == DoneOnce)
             return;
 
-
         if (DoOnce == true)
         {
             JunkerGameMode.FinishedStoryPart(EventChain.name);
 
             DoneOnce = true;
         }
-
-
 
         if (EventChain != null)
             foreach (GameEvent item in EventChain.eventChain)
