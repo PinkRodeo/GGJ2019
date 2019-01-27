@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventChain:
   - eventType: 2
-    image: {fileID: 21300000, guid: 26ee1c85cb5ad084f852d3401ed388c9, type: 3}
+    image: {fileID: 0}
     title: 
     description: "(You) There it is. One of the portal fractions, how do I possibly
       get this to the Rift?\r\nSystem: Warning anomaly detected\u2026\r"
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
-    FadeTime: 0
+    FadeInTime: 0
+    FadeOutTime: 0
   - eventType: 2
     image: {fileID: 21300000, guid: 26ee1c85cb5ad084f852d3401ed388c9, type: 3}
     title: 
@@ -31,7 +32,8 @@ MonoBehaviour:
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 2
-    FadeTime: 0.13
+    FadeInTime: 0
+    FadeOutTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
@@ -40,4 +42,5 @@ MonoBehaviour:
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
-    FadeTime: 3.96
+    FadeInTime: 0
+    FadeOutTime: 0
