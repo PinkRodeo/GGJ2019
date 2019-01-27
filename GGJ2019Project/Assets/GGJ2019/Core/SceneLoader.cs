@@ -1,31 +1,46 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum E_Level
 {
-	Menu,
+	MainMenu,
+	Intro,
 	Rift,
 	X,
 	Y,
 	Z,
+	None,
 }
 
 [System.Serializable]
-public struct LevelMusicData
+public class LevelMusicData
 {
-	public FMODEventPlayable levelMusic;
+	public E_Level level;
+	[EventRef]
+	public String levelMusic = "";
 }
 
 public class SceneLoader : MonoBehaviour
 {
+	public delegate void ChangeLevel(E_Level p_CurrentLevel, E_Level p_NextLevel);
+
+	public ChangeLevel OnChangeLevel;
+	public ChangeLevel OnChangeLevelOnce;
+
 	public static SceneLoader instance;
 
-	public Dictionary<E_Level, LevelMusicData> musicData;
+	public LevelMusicData[] levelMusicData;
+
+	public E_Level currentLevel { get; private set; }
 
 	protected void Awake()
 	{
+		currentLevel = E_Level.None;
+
 		if (instance != null)
 		{
 			GameObject.Destroy(this);
@@ -38,47 +53,70 @@ public class SceneLoader : MonoBehaviour
 		}
 	}
 
-	private void ClearScene()
+	private void ClearScene(E_Level p_NextLevel)
 	{
-		var count = SceneManager.sceneCount;
-		for (int i = 0; i < count; i++)
+		if (OnChangeLevel != null)
 		{
-			//SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(i).buildIndex);
+			OnChangeLevel.Invoke(currentLevel, p_NextLevel);
 		}
+		if (OnChangeLevelOnce != null)
+		{
+			OnChangeLevelOnce.Invoke(currentLevel, p_NextLevel);
+			OnChangeLevelOnce = null;
+		}
+
+
+		currentLevel = p_NextLevel;
 	}
 
 	public void LoadMenuScene()
 	{
-		ClearScene();
+		ClearScene(E_Level.MainMenu);
 		SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+	}
+
+	public void LoadSceneIntro()
+	{
+		ClearScene(E_Level.Intro);
+		SceneManager.LoadScene("IntroScene", LoadSceneMode.Single);
 	}
 
 	public void LoadSceneRift()
 	{
-		ClearScene();
+		ClearScene(E_Level.Rift);
 		SceneManager.LoadScene("L_Rift", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_Rift_Art", LoadSceneMode.Additive);
 	}
 
 	public void LoadSceneX()
 	{
-		ClearScene();
+		ClearScene(E_Level.X);
+
 		SceneManager.LoadScene("L_X", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_X_Art", LoadSceneMode.Additive);
 	}
 
 	public void LoadSceneY()
 	{
-		ClearScene();
+		ClearScene(E_Level.Y);
+
 		SceneManager.LoadScene("L_Y", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_Y_Art", LoadSceneMode.Additive);
 	}
 
 	public void LoadSceneZ()
 	{
-		ClearScene();
+		ClearScene(E_Level.Z);
+
 		SceneManager.LoadScene("L_Z", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_Z_Art", LoadSceneMode.Additive);
+	}
+
+	public void LoadSceneMainMenu()
+	{
+		ClearScene(E_Level.MainMenu);
+
+		SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
 	}
 
 	protected void Update()
@@ -94,7 +132,18 @@ public class SceneLoader : MonoBehaviour
 			LoadSceneY();
 		else if (Input.GetKeyDown(KeyCode.Alpha4))
 			LoadSceneZ();
-		else if (Input.GetKeyDown(KeyCode.Alpha5))
-			LoadSceneZ();
+		else if (Input.GetKeyDown(KeyCode.Alpha6))
+			LoadSceneMainMenu();
+	}
+
+	public LevelMusicData FindLevelData(E_Level p_level)
+	{
+		foreach (var levelData in levelMusicData)
+		{
+			if (levelData.level == p_level)
+				return levelData;
+		}
+
+		return null;
 	}
 }

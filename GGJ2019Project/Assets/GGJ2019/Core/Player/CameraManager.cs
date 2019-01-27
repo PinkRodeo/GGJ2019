@@ -50,6 +50,18 @@ public class CameraManager : MonoBehaviour
 
 		JunkerGameMode.instance.cameraManager = this;
 
+		SceneLoader.instance.OnChangeLevel += (E_Level currentLevel, E_Level p_NextLevel) =>
+		{
+			musicComponent.Stop();
+		};
+
+		var levelData = SceneLoader.instance.FindLevelData(SceneLoader.instance.currentLevel);
+		if (levelData == null)
+		{
+			return;
+		}
+		musicComponent.Event = levelData.levelMusic;
+
 		musicComponent.Play();
 	}
 
@@ -76,7 +88,7 @@ public class CameraManager : MonoBehaviour
 	private bool b_ZoomingIn = false;
 	public float zoomedInDistance = 7.5f;
 	public float zoomedOutDistance = 24.5f;
-
+	
 	public void ZoomIn()
 	{
 		if (b_ZoomingIn)

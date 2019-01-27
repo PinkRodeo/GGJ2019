@@ -43,3 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a47a21e239be9245b2a69b630565407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelMusicData:
+  - level: 0
+    levelMusic: event:/Music/Music - The Rift
+  - level: 1
+    levelMusic: event:/Music/Music - The Rift
+  - level: 2
+    levelMusic: event:/Music/Music - X-Cluster
+  - level: 3
+    levelMusic: event:/Music/Music - Y-Cluster
+  - level: 4
+    levelMusic: event:/Music/Music - Z-Cluster
+  - level: 1
+    levelMusic: event:/Music/Music - The Rift
