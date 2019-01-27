@@ -3,10 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum E_Level
+{
+	Menu,
+	Rift,
+	X,
+	Y,
+	Z,
+}
+
+[System.Serializable]
+public struct LevelMusicData
+{
+	public FMODEventPlayable levelMusic;
+}
+
 public class SceneLoader : MonoBehaviour
 {
 	public static SceneLoader instance;
-	
+
+	public Dictionary<E_Level, LevelMusicData> musicData;
+
 	protected void Awake()
 	{
 		if (instance != null)
