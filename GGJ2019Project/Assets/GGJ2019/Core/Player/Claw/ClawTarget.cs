@@ -54,7 +54,7 @@ public class ClawTarget : MonoBehaviour
 
 	public void ShipUnDocked()
 	{
-		if (OnClawConnect != null)
+		if (OnShipUnDocked != null)
 			OnShipUnDocked();
 	}
 
