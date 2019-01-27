@@ -15,6 +15,11 @@ public class ClawTarget : MonoBehaviour
 	public bool bEnableLights = false;
 	public List<SpriteRenderer> lights = new List<SpriteRenderer>();
 
+	public bool tweakSprite = false;
+
+	public Color spriteTint = Color.green;
+	public Color lightTint = Color.green;
+
 	protected void OnValidate()
 	{
 		var sprites = GetComponentsInChildren<SpriteRenderer>();
@@ -25,6 +30,24 @@ public class ClawTarget : MonoBehaviour
 			{
 				lights.Add(sprite);
 				sprite.enabled = bEnableLights;
+			}
+		}
+
+		if (tweakSprite)
+		{
+			var spriteHelper = GetComponentInChildren<SpaceSpriteHelper>();
+
+			if (spriteHelper != null)
+			{
+				if (lightTint != Color.green)
+					spriteHelper.highlightColor = lightTint;
+
+				if (spriteTint != Color.green)
+				{
+					spriteHelper.GetComponent<SpriteRenderer>().color = spriteTint;
+				}
+
+				spriteHelper.SetupMaterial();
 			}
 		}
 

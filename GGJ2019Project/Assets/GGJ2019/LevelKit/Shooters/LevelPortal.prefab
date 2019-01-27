@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 9117745466879937260}
   - component: {fileID: 6402920634528019337}
   m_Layer: 0
-  m_Name: SmallPortal_Inner
+  m_Name: LevelPortal
   m_TagString: ClawTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,6 +208,9 @@ MonoBehaviour:
   bEnableLights: 0
   lights:
   - {fileID: 863325234667576819}
+  tweakSprite: 0
+  spriteTint: {r: 0, g: 1, b: 0, a: 1}
+  lightTint: {r: 0, g: 1, b: 0, a: 1}
 --- !u!50 &9117745466879937260
 Rigidbody2D:
   serializedVersion: 4

@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992659346}
-  m_LocalRotation: {x: 0, y: 0, z: 0.8814336, w: 0.47230792}
+  m_LocalRotation: {x: 0, y: 0, z: 0.12453832, w: 0.9922148}
   m_LocalPosition: {x: 52.000004, y: 3.8000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -52,6 +52,9 @@ MonoBehaviour:
   lights:
   - {fileID: 7175293214427514600}
   - {fileID: 8010464810846026324}
+  tweakSprite: 0
+  spriteTint: {r: 0, g: 1, b: 0, a: 1}
+  lightTint: {r: 0, g: 1, b: 0, a: 1}
 --- !u!50 &992659347
 Rigidbody2D:
   serializedVersion: 4
@@ -213,9 +216,9 @@ MonoBehaviour:
   rotation: 0
   brightness: 0.5
   contrast: 0.711
-  lightDirection: 5.18
-  highlightColor: {r: 1, g: 1, b: 1, a: 0.5}
-  highlightSize: 0
+  lightDirection: 2.99
+  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightSize: 0.0332
   blurAmount: 0
   bRandomizeValue: 1
   bRandomizeRotation: 1
