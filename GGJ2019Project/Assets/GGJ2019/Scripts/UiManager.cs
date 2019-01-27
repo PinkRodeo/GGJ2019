@@ -112,10 +112,13 @@ public class UiManager : MonoBehaviour
         //als dit de eerste text menu van de reeks is
         if (LastEvent == null)
         {
-            Vector3 oldPos = Vector3.zero + CurrentPanel.panel.transform.position;
+            if (panel.panelType == PanelType.Narrative)
+            {
+                Vector3 oldPos = Vector3.zero + CurrentPanel.panel.transform.position;
 
-            CurrentPanel.panel.transform.position = oldPos + Vector3.down *250;
-             CurrentPanel.panel.transform.DOMove(oldPos, .3f);
+                CurrentPanel.panel.transform.position = oldPos + Vector3.down * 250;
+                CurrentPanel.panel.transform.DOMove(oldPos, .3f);
+            }
         }
 
         panel.HideAllButtons();
