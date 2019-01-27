@@ -29,7 +29,8 @@ public class GameEvent
     public float TextPrintInterval = 1;
     public List<OptionData> Choices = new List<OptionData>();
     public E_Level newLevelToLoad = E_Level.None;
-    public float FadeTime;
+    public float FadeInTime;
+    public float FadeOutTime;
 
     public GameEvent SetImage(Sprite _image) { image = _image; return this; }
     public GameEvent SetTitle(string _title) { title = _title; return this; }
@@ -74,28 +75,31 @@ public class EventManager : MonoBehaviour
 
     void HandleSceneSwitch(GameEvent executedEvent)
     {
-                if (executedEvent.newLevelToLoad != SceneLoader.instance.currentLevel)
-                    switch (executedEvent.newLevelToLoad)
-                    {
-                        case E_Level.Intro:
-                            SceneLoader.instance.LoadSceneIntro();
-                            break;
-                        case E_Level.Rift:
-                            SceneLoader.instance.LoadSceneRift();
-                            break;
-                        case E_Level.X:
-                            SceneLoader.instance.LoadSceneX();
-                            break;
-                        case E_Level.Y:
-                            SceneLoader.instance.LoadSceneY();
-                            break;
-                        case E_Level.Z:
-                            SceneLoader.instance.LoadSceneZ();
-                            break;
-                        default:
+        if (executedEvent.newLevelToLoad != SceneLoader.instance.currentLevel)
+            switch (executedEvent.newLevelToLoad)
+            {
+                case E_Level.Intro:
+                    SceneLoader.instance.LoadSceneIntro();
+                    break;
+                case E_Level.Rift:
+                    SceneLoader.instance.LoadSceneRift();
+                    break;
+                case E_Level.X:
+                    SceneLoader.instance.LoadSceneX();
+                    break;
+                case E_Level.Y:
+                    SceneLoader.instance.LoadSceneY();
+                    break;
+                case E_Level.Z:
+                    SceneLoader.instance.LoadSceneZ();
+                    break;
+                case E_Level.EndGame:
+                    SceneLoader.instance.LoadEndGameScene();
+                    break;
+                default:
                     Debug.Log("not implemented scene switch for :" + executedEvent.newLevelToLoad);
-                            break;
-                    }
+                    break;
+            }
     }
 
     protected void Update()
