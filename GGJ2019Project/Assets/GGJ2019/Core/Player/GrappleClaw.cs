@@ -147,7 +147,7 @@ public class GrappleClaw : MonoBehaviour
 	public StudioEventEmitter sfx_hitTarget;
 	public StudioEventEmitter sfx_reelTargetIn;
 	public StudioEventEmitter sfx_hitReeledInTarget;
-
+	
 	protected void Awake()
 	{
 

@@ -17,7 +17,7 @@ public class JunkerGameMode : MonoBehaviour
 {
 	public static JunkerGameMode instance;
 
-	public JunkerState junkerState = new JunkerState();
+	public static JunkerState junkerState = new JunkerState();
 
 	public JunkerPlayer player
 	{

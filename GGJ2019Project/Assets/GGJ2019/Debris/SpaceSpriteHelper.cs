@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer)), ExecuteInEditMode]
 public class SpaceSpriteHelper : MonoBehaviour
 {
-	private Shader spaceShader;
+	protected Shader spaceShader;
 
 	[Range(0, 360f)]
 	public float rotation = 0f;
@@ -27,7 +27,10 @@ public class SpaceSpriteHelper : MonoBehaviour
 	[Range(0, 0.06f)]
 	public float blurAmount = 0f;
 
-	private Material material;
+	public bool bRandomizeValue = false;
+	public bool bRandomizeRotation = false;
+
+	protected Material material;
 
 	protected void OnValidate()
 	{
@@ -42,7 +45,7 @@ public class SpaceSpriteHelper : MonoBehaviour
 		//SetupMaterial();
 	}
 
-	private void SetupMaterial()
+	protected virtual void SetupMaterial()
 	{
 		if (material == null)
 		{
@@ -63,10 +66,27 @@ public class SpaceSpriteHelper : MonoBehaviour
 
 		material.SetFloat("_BlurAmount", blurAmount);
 
-		material.SetFloat("_LevelAdjustB", brightness);
-		material.SetFloat("_LevelAdjustC", contrast);
+		if (bRandomizeValue)
+		{
+			material.SetFloat("_LevelAdjustB", Random.Range(brightness-0.09f, brightness +0.09f));
+			material.SetFloat("_LevelAdjustC", Random.Range(contrast - 0.09f, contrast + 0.09f));
+		}
+		else
+		{
+			material.SetFloat("_LevelAdjustB", brightness);
+			material.SetFloat("_LevelAdjustC", contrast);
+		}
 
-		transform.rotation = Quaternion.Euler(0,0, rotation);
+		if (bRandomizeRotation)
+		{
+			transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
+			var rend = GetComponent<SpriteRenderer>();
+		}
+		else
+		{
+			transform.rotation = Quaternion.Euler(0, 0, rotation);
+		}
+
 
 	}
 }

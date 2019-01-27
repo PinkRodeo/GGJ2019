@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using FMODUnity;
 
 public enum PanelType
 {
@@ -52,8 +53,9 @@ public class UiManager : MonoBehaviour
     DialogPrinter TextPrinter;
     DialogPanel CurrentPanel;
 
+	public StudioEventEmitter sfx_hideUI;
 
-    private void Awake()
+	private void Awake()
     {
         HideAllPanels();
         EventManager.OnEventStart += ShowChoices;
@@ -65,7 +67,7 @@ public class UiManager : MonoBehaviour
         // Debug.Log(TextPrinter.IsPrinting());
         if (CurrentPanel != null)
         {
-            if (TextPrinter != null && TextPrinter.IsPrinting() && Input.GetKeyDown(KeyCode.Space))
+            if (TextPrinter != null && TextPrinter.IsPrinting() && Input.GetMouseButtonDown(0))
             {
                 TextPrinter.ForceFinish();
                 return;// prevent from multiple keys being pressed the same frame
@@ -75,14 +77,14 @@ public class UiManager : MonoBehaviour
                 case PanelType.Narrative:
                     if (!CurrentPanel.HasActiveButton())
                     {
-                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetKeyDown(KeyCode.Space))
+                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetMouseButtonDown(0))
                             EventManager.onEventFinish.Invoke();
                     }
                     break;
                 case PanelType.CutScene:
                     if (!CurrentPanel.HasActiveButton())
                     {
-                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetKeyDown(KeyCode.Space))
+                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetMouseButtonDown(0))
                             EventManager.onEventFinish.Invoke();
                     }
                     break;
@@ -104,8 +106,6 @@ public class UiManager : MonoBehaviour
 
     private void DrawMenu(DialogPanel panel)
     {
-        Debug.Log(panel.panel);
-
         CurrentPanel = panel;
         panel.panel.SetActive(true);
 
@@ -127,7 +127,7 @@ public class UiManager : MonoBehaviour
         {
             TextPrinter = new DialogPrinter(CurrentEvent.description, CurrentEvent.TextPrintInterval, this);
             panel.Description.text = "";
-            TextPrinter.OnTextUpdate += UpdateDescritpion;
+            TextPrinter.OnTextUpdate += UpdateDescription;
             TextPrinter.OnPrinterFinished += AssignOptions;
             TextPrinter.OnPrinterFinished += UpdateSecodnDescription;
         }
@@ -150,7 +150,7 @@ public class UiManager : MonoBehaviour
 
         if (panel.SecondDescription != null)
         {
-            panel.SecondDescription.text = TextPrinter != null && TextPrinter.IsPrinting() ? "SPACE TO SKIP" : "SPACE TO CONTINUE >";
+            panel.SecondDescription.text = TextPrinter != null && TextPrinter.IsPrinting() ? "..." : "PRESS TO CONTINUE >";
 
             panel.SecondDescription.gameObject.SetActive(true);
         }
@@ -159,7 +159,7 @@ public class UiManager : MonoBehaviour
     void UpdateSecodnDescription()
     {
         if (CurrentPanel.SecondDescription != null)
-            CurrentPanel.SecondDescription.text = TextPrinter.IsPrinting() ? "SPACE TO SKIP" : "SPACE TO CONTINUE >";
+            CurrentPanel.SecondDescription.text = TextPrinter.IsPrinting() ? "..." : "PRESS TO CONTINUE >";
     }
 
     void AssignOptions()
@@ -207,20 +207,20 @@ public class UiManager : MonoBehaviour
         EventManager.ReplaceCurrentEvents(CurrentEvent.Choices[1].PressedDialogs.eventChain);
     }
 
-    private void UpdateDescritpion(string text)
+    private void UpdateDescription(string text)
     {
         CurrentPanel.Description.text = text;
     }
-
-
 
     private void EventListEmpty()
     {
         LastEvent = null;
         HideAllPanels();
-    }
+		sfx_hideUI.Play();
+			
+	}
 
-    void RemoveMenuOnChoicePressed()
+	void RemoveMenuOnChoicePressed()
     {
         EventManager.onEventFinish.Invoke();
     }
@@ -229,19 +229,21 @@ public class UiManager : MonoBehaviour
     {
         for (int i = 0; i < dialogPanels.Length; i++)
         {
-            if (dialogPanels[i].panelType == _panelType)
+            if (dialogPanels[i].panelType == _panelType &&
+				dialogPanels[i].panel != null)
                 return dialogPanels[i];
         }
 
-        Debug.LogWarning("no type of this panel found");
+        Debug.LogError("no type of this panel found " + _panelType.ToString());
         return null;
     }
 
     void HideAllPanels()
     {
-        foreach (DialogPanel item in dialogPanels)
-        {
-            item.panel.SetActive(false);
-        }
-    }
+		foreach (DialogPanel item in dialogPanels)
+		{
+			if (item?.panel != null)
+				item.panel.SetActive(false);
+		}
+	}
 }

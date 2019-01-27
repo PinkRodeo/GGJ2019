@@ -148,7 +148,9 @@ MonoBehaviour:
   musicXComplete: 0
   musicYComplete: 0
   musicZComplete: 0
+  zoomedInDistanceVar: {x: 0.25, y: 3}
   zoomedInDistance: 7.5
+  zoomedOutDistanceVar: {x: 20, y: 15}
   zoomedOutDistance: 65
 --- !u!33 &1874436078855343389
 MeshFilter:
