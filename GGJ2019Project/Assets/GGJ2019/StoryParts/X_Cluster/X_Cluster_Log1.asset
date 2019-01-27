@@ -18,24 +18,32 @@ MonoBehaviour:
     title: 
     description: "(You): They are\u2026 Emma, Aziz, \u2026 how long ago was this recorded?\r"
     TextPrintInterval: 1
-    Keuzes: []
+    Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
     description: "Emma: You drifters still out there? This was a strong one. \r\nAziz:
       Still fighting the good fight.\r\n"
     TextPrintInterval: 1
-    Keuzes: []
+    Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
     description: "Mir: Peachy.\r\nTom: Nothing we can\u2019t handle. You?\r"
     TextPrintInterval: 1
-    Keuzes: []
+    Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
     description: "Emma: Couldn\u2019t be better.\r\nAziz: Well come over here for
       heatshield repairs, we can\u2019t let another flare catch us by surprise. \r\n"
     TextPrintInterval: 1
-    Keuzes: []
+    Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
