@@ -390,11 +390,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1874436078855343586, guid: 74f305a53ac54014faf51634e12bdac1,
+    - target: {fileID: 5526170969724289099, guid: 74f305a53ac54014faf51634e12bdac1,
         type: 3}
-      propertyPath: zoomOutComponent
-      value: 
-      objectReference: {fileID: 1712299378791141037}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1874436078855343384, guid: 74f305a53ac54014faf51634e12bdac1,
         type: 3}
       propertyPath: m_TranslationOffset.x
@@ -415,20 +415,20 @@ PrefabInstance:
       propertyPath: m_TranslationOffset.z
       value: -24.6
       objectReference: {fileID: 0}
-    - target: {fileID: 5526170969724289099, guid: 74f305a53ac54014faf51634e12bdac1,
+    - target: {fileID: 1874436078855343586, guid: 74f305a53ac54014faf51634e12bdac1,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      propertyPath: zoomOutComponent
+      value: 
+      objectReference: {fileID: 1712299378791141037}
+    - target: {fileID: 4550459887207307182, guid: 74f305a53ac54014faf51634e12bdac1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 217.2002
       objectReference: {fileID: 0}
     - target: {fileID: 4550459885459755797, guid: 74f305a53ac54014faf51634e12bdac1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -217.2002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4550459887207307182, guid: 74f305a53ac54014faf51634e12bdac1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 217.2002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f305a53ac54014faf51634e12bdac1, type: 3}
