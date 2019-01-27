@@ -40,11 +40,6 @@ public class SpaceSpriteHelper : MonoBehaviour
 		SetupMaterial();
 	}
 
-	protected void Awake()
-	{
-		//SetupMaterial();
-	}
-
 	public virtual void SetupMaterial()
 	{
 		if (material == null)
