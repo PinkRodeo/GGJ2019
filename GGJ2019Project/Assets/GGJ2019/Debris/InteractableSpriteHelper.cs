@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer)), ExecuteInEditMode]
 public class InteractableSpriteHelper : SpaceSpriteHelper
 {
-	protected override void SetupMaterial()
+	public override void SetupMaterial()
 	{
 		if (material == null)
 		{
@@ -31,8 +31,8 @@ public class InteractableSpriteHelper : SpaceSpriteHelper
 
 		if (bRandomizeValue)
 		{
-			material.SetFloat("_LevelAdjustB", Random.Range(brightness-0.09f, brightness +0.09f));
-			material.SetFloat("_LevelAdjustC", Random.Range(contrast - 0.09f, contrast + 0.09f));
+			material.SetFloat("_LevelAdjustB", Mathf.Max(0f, Random.Range(brightness*0.9f, brightness *1.05f)));
+			material.SetFloat("_LevelAdjustC", Mathf.Max(0f, Random.Range(contrast *0.9f, contrast *1.05f)));
 		}
 		else
 		{

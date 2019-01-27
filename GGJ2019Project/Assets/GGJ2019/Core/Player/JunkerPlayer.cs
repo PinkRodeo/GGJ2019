@@ -6,6 +6,8 @@ using UnityEngine.Animations;
 public class JunkerPlayer : MonoBehaviour
 {
     public RectTransform rect_transform;
+	public SpriteRenderer art;
+	public TrailRenderer portalTrail;
 
 	public Rigidbody2D rigidBody
 	{
@@ -24,7 +26,8 @@ public class JunkerPlayer : MonoBehaviour
 
 	protected void Awake ()
     {
-        rect_transform = this.transform as RectTransform;
+		portalTrail.emitting = false;
+		rect_transform = this.transform as RectTransform;
         _rigidBody = this.GetComponent<Rigidbody2D>();
 		fixedJoint = this.GetComponent<FixedJoint2D>();
 

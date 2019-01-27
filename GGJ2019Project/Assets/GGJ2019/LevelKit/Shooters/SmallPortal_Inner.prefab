@@ -210,6 +210,9 @@ MonoBehaviour:
   bEnableLights: 0
   lights:
   - {fileID: 863325234667576819}
+  tweakSprite: 0
+  spriteTint: {r: 0, g: 1, b: 0, a: 1}
+  lightTint: {r: 0, g: 1, b: 0, a: 1}
 --- !u!50 &9117745466879937260
 Rigidbody2D:
   serializedVersion: 4
@@ -281,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e460288dc4cf374fb6ab442fb885e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalColor: {r: 0.6981132, g: 0.10208259, b: 0.58584476, a: 0.6}
 --- !u!1 &8687092141473848614
 GameObject:
   m_ObjectHideFlags: 0

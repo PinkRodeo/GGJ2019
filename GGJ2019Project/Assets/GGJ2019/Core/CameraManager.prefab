@@ -150,7 +150,7 @@ MonoBehaviour:
   musicZComplete: 0
   zoomedInDistanceVar: {x: 0.25, y: 3}
   zoomedInDistance: 7.5
-  zoomedOutDistanceVar: {x: 20, y: 15}
+  zoomedOutDistanceVar: {x: 40, y: 16}
   zoomedOutDistance: 65
 --- !u!33 &1874436078855343389
 MeshFilter:
@@ -177,7 +177,7 @@ PositionConstraint:
   m_GameObject: {fileID: 1874436078855343584}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: -24.6}
+  m_TranslationAtRest: {x: 0, y: 0, z: -65}
   m_TranslationOffset: {x: 960, y: 540, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
@@ -248,22 +248,22 @@ PrefabInstance:
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
@@ -293,22 +293,22 @@ PrefabInstance:
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 112.5
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 272
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 205
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 539
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
@@ -333,12 +333,27 @@ PrefabInstance:
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329016221783425598, guid: 4cf838873f78e8947a54c8bcc8a59f74,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cf838873f78e8947a54c8bcc8a59f74, type: 3}

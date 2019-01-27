@@ -45,7 +45,7 @@ public class SpaceSpriteHelper : MonoBehaviour
 		//SetupMaterial();
 	}
 
-	protected virtual void SetupMaterial()
+	public virtual void SetupMaterial()
 	{
 		if (material == null)
 		{
@@ -68,8 +68,8 @@ public class SpaceSpriteHelper : MonoBehaviour
 
 		if (bRandomizeValue)
 		{
-			material.SetFloat("_LevelAdjustB", Random.Range(brightness-0.09f, brightness +0.09f));
-			material.SetFloat("_LevelAdjustC", Random.Range(contrast - 0.09f, contrast + 0.09f));
+			material.SetFloat("_LevelAdjustB", Mathf.Max(0f, Random.Range(brightness * 0.95f, brightness * 1.05f)));
+			material.SetFloat("_LevelAdjustC", Mathf.Max(0f, Random.Range(contrast * 0.95f, contrast * 1.05f)));
 		}
 		else
 		{
