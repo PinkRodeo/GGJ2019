@@ -149,7 +149,7 @@ MonoBehaviour:
   musicYComplete: 0
   musicZComplete: 0
   zoomedInDistance: 7.5
-  zoomedOutDistance: 24.6
+  zoomedOutDistance: 65
 --- !u!33 &1874436078855343389
 MeshFilter:
   m_ObjectHideFlags: 0
