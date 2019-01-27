@@ -39,8 +39,44 @@ MonoBehaviour:
     TextPrintInterval: 1
     Choices: []
   - eventType: 2
-    image: {fileID: 21300000, guid: 00b5a515a7ef56c4db89ae722171d93e, type: 3}
+    image: {fileID: 0}
     title: 
-    description: tasfd
+    description: '(You): Bright light illuminates everything I can see. Not a single
+      shadow can hide from this overwhelming force. '
+    TextPrintInterval: 1
+    Choices: []
+  - eventType: 2
+    image: {fileID: 0}
+    title: 
+    description: For what both feels like a split second and a decade I'm thrust forward
+      through this tunnel of pure light. When I open my eyes, I'm in a completely
+      different place.
+    TextPrintInterval: 1
+    Choices: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "(You): We're here. What a trip, am I right? Guys? Where the\u2026
+      Host 12 coming to scout team. Is anyone there?"
+    TextPrintInterval: 1
+    Choices: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: '(SYSTEM): No response detected.'
+    TextPrintInterval: 1
+    Choices: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "(You): We were just there. We all left at the same time. The portal\u2026
+      Where is it? The Rift is\u2026 Not supposed to look like that. No wonder."
+    TextPrintInterval: 1
+    Choices: []
+  - eventType: 0
+    image: {fileID: 0}
+    title: 
+    description: "(SYSTEM): Three distress beacons detected. \r\n(You): Finally, something
+      to go on.\r"
     TextPrintInterval: 1
     Choices: []
