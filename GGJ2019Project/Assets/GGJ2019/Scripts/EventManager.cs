@@ -19,9 +19,7 @@ public class OptionData
 [System.Serializable]
 public class GameEvent
 {
-    [HideInInspector]
     public PanelType eventType;
-    [HideInInspector]
     public Sprite image;
     [HideInInspector]
     public string title;
@@ -65,19 +63,19 @@ public class EventManager : MonoBehaviour
         onEventFinish += FinishEvent;
     }
 
-	protected void Update()
-	{
-		if (IsEventActive())
-		{
-			Time.timeScale = 0.2f;
-		}
-		else
-		{
-			Time.timeScale = 1f;
-		}
-	}
+    protected void Update()
+    {
+        if (IsEventActive())
+        {
+            Time.timeScale = 0.2f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
 
-	public static void AddEvent(GameEvent gameEvent)
+    public static void AddEvent(GameEvent gameEvent)
     {
         instance.eventQueue.Enqueue(gameEvent);
 
@@ -99,7 +97,7 @@ public class EventManager : MonoBehaviour
         {
             instance.eventQueue.Enqueue(gameEvent);
         }
-        
+
         instance.ExecuteNextItemInQue();
     }
 
@@ -132,8 +130,8 @@ public class EventManager : MonoBehaviour
         OnEventStart.Invoke(eventQueue.Peek());
     }
 
-	public bool IsEventActive()
-	{
-		return eventQueue.Count != 0;
-	}
+    public bool IsEventActive()
+    {
+        return eventQueue.Count != 0;
+    }
 }

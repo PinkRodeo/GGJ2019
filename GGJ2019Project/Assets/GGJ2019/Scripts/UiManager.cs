@@ -8,7 +8,8 @@ using DG.Tweening;
 public enum PanelType
 {
     Narrative,
-    NarrativeWithOptions
+    NarrativeWithOptions,
+    CutScene
 }
 
 [System.Serializable]
@@ -78,7 +79,15 @@ public class UiManager : MonoBehaviour
                             EventManager.onEventFinish.Invoke();
                     }
                     break;
+                case PanelType.CutScene:
+                    if (!CurrentPanel.HasActiveButton())
+                    {
+                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetKeyDown(KeyCode.Space))
+                            EventManager.onEventFinish.Invoke();
+                    }
+                    break;
                 default:
+                    Debug.LogError("Panel not implemented");
                     break;
             }
         }
@@ -86,6 +95,7 @@ public class UiManager : MonoBehaviour
 
     private void ShowChoices(GameEvent gameEvent)
     {
+
         CurrentEvent = gameEvent;
         HideAllPanels();
         DrawMenu(GetPanelOfType(gameEvent.eventType));
@@ -94,16 +104,18 @@ public class UiManager : MonoBehaviour
 
     private void DrawMenu(DialogPanel panel)
     {
+        Debug.Log(panel.panel);
+
         CurrentPanel = panel;
         panel.panel.SetActive(true);
-        
+
         //als dit de eerste text menu van de reeks is
-        if(LastEvent == null)
+        if (LastEvent == null)
         {
             Vector3 oldPos = Vector3.zero + CurrentPanel.panel.transform.position;
 
-            CurrentPanel.panel.transform.position = oldPos + Vector3.down *250;
-            CurrentPanel.panel.transform.DOMove(oldPos, .3f);
+            // CurrentPanel.panel.transform.position = oldPos + Vector3.down *250;
+            // CurrentPanel.panel.transform.DOMove(oldPos, .3f);
         }
 
         panel.HideAllButtons();
@@ -124,18 +136,16 @@ public class UiManager : MonoBehaviour
             panel.Description.text = CurrentEvent.description;
             AssignOptions();
         }
+        //Debug.Log((panel.image.sprite != null) + ":" + (LastEvent?.image != null));
 
-        if (panel.image != null)
+        if (CurrentEvent.image != null || LastEvent?.image != null)
         {
-            if (CurrentEvent.image == null || LastEvent?.image == null)
-            {
-                panel.image.gameObject.SetActive(false);
-            }
-            else
-            {
-                panel.image.gameObject.SetActive(true);
-                panel.image.sprite = CurrentEvent.image ?? LastEvent?.image;
-            }
+            panel.image.gameObject.SetActive(true);
+            panel.image.sprite = CurrentEvent.image ?? LastEvent?.image;
+        }
+        else
+        {
+            panel.image.gameObject.SetActive(false);
         }
 
         if (panel.SecondDescription != null)

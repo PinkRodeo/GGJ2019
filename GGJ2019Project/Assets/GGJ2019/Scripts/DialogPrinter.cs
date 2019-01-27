@@ -22,7 +22,7 @@ public class DialogPrinter
 
     public PrintUpdate OnTextUpdate;
     public PrinterFinishedDelegate OnPrinterFinished;
-
+    
     public DialogPrinter(string text, float interval, MonoBehaviour objectBehaviour)
     {
         currentState = DialogState.none;
@@ -51,7 +51,7 @@ public class DialogPrinter
             }
             catch (System.Exception) { }
 
-            yield return new WaitForSecondsRealtime(0.05f * interval);
+            yield return new WaitForSecondsRealtime(0.02f * interval);
         }
 
         currentState = DialogState.finished;
