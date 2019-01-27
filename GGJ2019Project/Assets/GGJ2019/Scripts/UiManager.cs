@@ -114,8 +114,8 @@ public class UiManager : MonoBehaviour
         {
             Vector3 oldPos = Vector3.zero + CurrentPanel.panel.transform.position;
 
-            // CurrentPanel.panel.transform.position = oldPos + Vector3.down *250;
-            // CurrentPanel.panel.transform.DOMove(oldPos, .3f);
+            CurrentPanel.panel.transform.position = oldPos + Vector3.down *250;
+             CurrentPanel.panel.transform.DOMove(oldPos, .3f);
         }
 
         panel.HideAllButtons();
@@ -136,17 +136,17 @@ public class UiManager : MonoBehaviour
             panel.Description.text = CurrentEvent.description;
             AssignOptions();
         }
-        //Debug.Log((panel.image.sprite != null) + ":" + (LastEvent?.image != null));
 
-        if (CurrentEvent.image != null || LastEvent?.image != null)
-        {
-            panel.image.gameObject.SetActive(true);
-            panel.image.sprite = CurrentEvent.image ?? LastEvent?.image;
-        }
-        else
-        {
-            panel.image.gameObject.SetActive(false);
-        }
+        if (panel.image != null)
+            if (CurrentEvent.image != null)
+            {
+                panel.image.gameObject.SetActive(true);
+                panel.image.sprite = CurrentEvent.image ?? LastEvent?.image;
+            }
+            else
+            {
+                panel.image.gameObject.SetActive(false);
+            }
 
         if (panel.SecondDescription != null)
         {
