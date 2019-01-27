@@ -335,6 +335,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c323dc66889cc24092a6f71f9f12023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomOutComponent: {fileID: 0}
+  musicXComplete: 0
+  musicYComplete: 0
+  musicZComplete: 0
+  zoomedInDistance: 7.5
+  zoomedOutDistance: 24.5
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -446,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53.4, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1818360608 &519420036
@@ -458,8 +464,8 @@ PositionConstraint:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: 53.4, y: 0, z: -65}
-  m_TranslationOffset: {x: 53.4, y: 0, z: -65}
+  m_TranslationAtRest: {x: 0, y: 0, z: -65}
+  m_TranslationOffset: {x: 0, y: 0, z: -65}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 0
