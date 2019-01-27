@@ -71,8 +71,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
-    - _FlowPeriod: 2
-    - _FlowSpeed: 0.08
+    - _FlowPeriod: 8
+    - _FlowSpeed: 0.15
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
