@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992659350, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.99736226
+      value: 0.62973654
       objectReference: {fileID: 0}
     - target: {fileID: 992659350, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.072585076
+      value: -0.7768088
       objectReference: {fileID: 0}
     - target: {fileID: 992659350, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
       propertyPath: m_RootOrder
@@ -229,23 +229,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[15].y
       value: 0.06982279
       objectReference: {fileID: 0}
-    - target: {fileID: 992659348, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
-      propertyPath: bEnableLights
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 992659348, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
-      propertyPath: lights.Array.data[0]
-      value: 
-      objectReference: {fileID: 3259340137736846716}
-    - target: {fileID: 992659348, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
-      propertyPath: lights.Array.data[1]
-      value: 
-      objectReference: {fileID: 2414669312590430656}
-    - target: {fileID: 2252365172213888799, guid: 3bcff5e268d837648ac161ba4ba8eaee,
-        type: 3}
-      propertyPath: bRandomizeRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1512930852223526046, guid: 3bcff5e268d837648ac161ba4ba8eaee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -266,6 +249,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.67
       objectReference: {fileID: 0}
+    - target: {fileID: 992659348, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
+      propertyPath: bEnableLights
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992659348, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
+      propertyPath: lights.Array.data[0]
+      value: 
+      objectReference: {fileID: 3259340137736846716}
+    - target: {fileID: 992659348, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
+      propertyPath: lights.Array.data[1]
+      value: 
+      objectReference: {fileID: 2414669312590430656}
     - target: {fileID: 7175293214427514600, guid: 3bcff5e268d837648ac161ba4ba8eaee,
         type: 3}
       propertyPath: m_Enabled
@@ -275,6 +270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252365172213888799, guid: 3bcff5e268d837648ac161ba4ba8eaee,
+        type: 3}
+      propertyPath: bRandomizeRotation
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}

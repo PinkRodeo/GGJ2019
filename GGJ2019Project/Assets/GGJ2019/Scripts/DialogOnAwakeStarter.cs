@@ -23,18 +23,11 @@ public class DialogOnAwakeStarter : MonoBehaviour
             DoneOnce = true;
         }
 
-
-
         if (EventChain != null)
             foreach (GameEvent item in EventChain.eventChain)
             {
                 EventManager.AddEvent(item);
             }
-        if (DoOnce == true)
-        {
-            var clawTarget = GetComponent<ClawTarget>();
-            clawTarget.SetLightsVisible(DoOnce != DoneOnce || DoOnce == false);
-        }
     }
 
     private void Awake()
