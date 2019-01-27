@@ -17,8 +17,7 @@ public class AddEvents : MonoBehaviour
     [SerializeField] DialogScriptableObject EventChain;
     [SerializeField] bool DoOnce = true;
 
-
-   [SerializeField] bool DoneOnce = false;
+    bool DoneOnce = false;
 
     [ContextMenu("AddItems")]
     public void Add()
@@ -41,6 +40,11 @@ public class AddEvents : MonoBehaviour
             {
                 EventManager.AddEvent(item);
             }
+        if (DoOnce == true)
+        {
+            var clawTarget = GetComponent<ClawTarget>();
+            clawTarget.SetLightsVisible(DoOnce != DoneOnce || DoOnce == false);
+        }
     }
 
     protected void Awake()
@@ -52,7 +56,8 @@ public class AddEvents : MonoBehaviour
 		{
 			return;
 		}
-		clawTarget.SetLightsVisible(true);
+
+		clawTarget.SetLightsVisible(DoOnce == true && DoOnce != DoneOnce || DoOnce == false);
 
         switch (eventTrigger)
         {
@@ -69,4 +74,6 @@ public class AddEvents : MonoBehaviour
                 break;
         }
     }
+
+    
 }
