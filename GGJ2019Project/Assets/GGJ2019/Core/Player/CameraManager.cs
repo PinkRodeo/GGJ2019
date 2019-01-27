@@ -65,7 +65,12 @@ public class CameraManager : MonoBehaviour
 
 		musicComponent.Play();
 
-		_currentCamera.DOShakeRotation(10f, 20, 4, 65f, false).SetLoops(-1);
+		_currentCamera.DOShakeRotation(1000f, 0.08f, 1, 80f, false).SetLoops(-1).SetEase(Ease.InOutCubic);
+
+		var state = JunkerGameMode.junkerState;
+		musicXComplete = state.x_Recovered ? 1f : 0f;
+		musicYComplete = state.y_Recovered ? 1f : 0f;
+		musicZComplete = state.z_Recovered ? 1f : 0f;
 	}
 
 	// Update is called once per frame

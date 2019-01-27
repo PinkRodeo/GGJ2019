@@ -213,6 +213,7 @@ MonoBehaviour:
   sfx_hitTarget: {fileID: 2601224813019840159}
   sfx_reelTargetIn: {fileID: 0}
   sfx_hitReeledInTarget: {fileID: 4439486114282022295}
+  sfx_detachAfterWaltz: {fileID: 0}
 --- !u!60 &7745035264319965691
 PolygonCollider2D:
   m_ObjectHideFlags: 0

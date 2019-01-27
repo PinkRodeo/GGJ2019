@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+using FMODUnity;
 
 [System.Serializable]
 public class OptionData
@@ -50,9 +51,10 @@ public class EventManager : MonoBehaviour
     public static GameEventDelegate OnEventStart;
     public static Delegate onEventFinish;
     public static Delegate onEventListEmpty;
+	public StudioEventEmitter sfx_showUI;
 
 
-    private void Awake()
+	private void Awake()
     {
 		if (instance != null)
 		{
@@ -87,8 +89,9 @@ public class EventManager : MonoBehaviour
         if (instance.eventQueue.Count == 1)
         {
             instance.ExecuteNextItemInQue();
+			instance.sfx_showUI.Play();
 
-        }
+		}
     }
 
     public static void ReplaceCurrentEvents(List<GameEvent> newEvents)

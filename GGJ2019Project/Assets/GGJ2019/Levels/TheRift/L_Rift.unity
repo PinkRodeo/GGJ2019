@@ -205,6 +205,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6991539015166983783, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
+        type: 3}
+      propertyPath: OverrideAttenuation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991539015166983783, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 6.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7703180889207863063, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
         type: 3}
       propertyPath: m_Name

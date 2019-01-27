@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using FMODUnity;
 
 public enum PanelType
 {
@@ -52,8 +53,9 @@ public class UiManager : MonoBehaviour
     DialogPrinter TextPrinter;
     DialogPanel CurrentPanel;
 
+	public StudioEventEmitter sfx_hideUI;
 
-    private void Awake()
+	private void Awake()
     {
         HideAllPanels();
         EventManager.OnEventStart += ShowChoices;
@@ -104,8 +106,6 @@ public class UiManager : MonoBehaviour
 
     private void DrawMenu(DialogPanel panel)
     {
-        Debug.Log(panel.panel);
-
         CurrentPanel = panel;
         panel.panel.SetActive(true);
 
@@ -127,7 +127,7 @@ public class UiManager : MonoBehaviour
         {
             TextPrinter = new DialogPrinter(CurrentEvent.description, CurrentEvent.TextPrintInterval, this);
             panel.Description.text = "";
-            TextPrinter.OnTextUpdate += UpdateDescritpion;
+            TextPrinter.OnTextUpdate += UpdateDescription;
             TextPrinter.OnPrinterFinished += AssignOptions;
             TextPrinter.OnPrinterFinished += UpdateSecodnDescription;
         }
@@ -207,20 +207,20 @@ public class UiManager : MonoBehaviour
         EventManager.ReplaceCurrentEvents(CurrentEvent.Choices[1].PressedDialogs.eventChain);
     }
 
-    private void UpdateDescritpion(string text)
+    private void UpdateDescription(string text)
     {
         CurrentPanel.Description.text = text;
     }
-
-
 
     private void EventListEmpty()
     {
         LastEvent = null;
         HideAllPanels();
-    }
+		sfx_hideUI.Play();
+			
+	}
 
-    void RemoveMenuOnChoicePressed()
+	void RemoveMenuOnChoicePressed()
     {
         EventManager.onEventFinish.Invoke();
     }
@@ -229,19 +229,21 @@ public class UiManager : MonoBehaviour
     {
         for (int i = 0; i < dialogPanels.Length; i++)
         {
-            if (dialogPanels[i].panelType == _panelType)
+            if (dialogPanels[i].panelType == _panelType &&
+				dialogPanels[i].panel != null)
                 return dialogPanels[i];
         }
 
-        Debug.LogWarning("no type of this panel found");
+        Debug.LogError("no type of this panel found " + _panelType.ToString());
         return null;
     }
 
     void HideAllPanels()
     {
-        foreach (DialogPanel item in dialogPanels)
-        {
-            item.panel.SetActive(false);
-        }
-    }
+		foreach (DialogPanel item in dialogPanels)
+		{
+			if (item?.panel != null)
+				item.panel.SetActive(false);
+		}
+	}
 }
