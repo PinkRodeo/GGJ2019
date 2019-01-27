@@ -28,6 +28,8 @@ public class GameEvent
     public string description;
     public float TextPrintInterval = 1;
     public List<OptionData> Choices = new List<OptionData>();
+    public E_Level newLevelToLoad = E_Level.None;
+    public float FadeTime;
 
     public GameEvent SetImage(Sprite _image) { image = _image; return this; }
     public GameEvent SetTitle(string _title) { title = _title; return this; }
@@ -46,7 +48,7 @@ public class EventManager : MonoBehaviour
 
     public delegate void Delegate();
 
-    Queue<GameEvent> eventQueue = new Queue<GameEvent>();
+    public Queue<GameEvent> eventQueue = new Queue<GameEvent>();
 
     public static GameEventDelegate OnEventStart;
     public static Delegate onEventFinish;
@@ -63,10 +65,37 @@ public class EventManager : MonoBehaviour
         }
         else
         {
+            OnEventStart += HandleSceneSwitch;
             instance = this;
         }
 
         onEventFinish += FinishEvent;
+    }
+
+    void HandleSceneSwitch(GameEvent executedEvent)
+    {
+                if (executedEvent.newLevelToLoad != SceneLoader.instance.currentLevel)
+                    switch (executedEvent.newLevelToLoad)
+                    {
+                        case E_Level.Intro:
+                            SceneLoader.instance.LoadSceneIntro();
+                            break;
+                        case E_Level.Rift:
+                            SceneLoader.instance.LoadSceneRift();
+                            break;
+                        case E_Level.X:
+                            SceneLoader.instance.LoadSceneX();
+                            break;
+                        case E_Level.Y:
+                            SceneLoader.instance.LoadSceneY();
+                            break;
+                        case E_Level.Z:
+                            SceneLoader.instance.LoadSceneZ();
+                            break;
+                        default:
+                    Debug.Log("not implemented scene switch for :" + executedEvent.newLevelToLoad);
+                            break;
+                    }
     }
 
     protected void Update()

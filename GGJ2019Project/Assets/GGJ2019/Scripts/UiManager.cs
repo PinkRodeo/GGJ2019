@@ -53,13 +53,17 @@ public class UiManager : MonoBehaviour
     DialogPrinter TextPrinter;
     DialogPanel CurrentPanel;
 
-	public StudioEventEmitter sfx_hideUI;
+    public StudioEventEmitter sfx_hideUI;
 
-	private void Awake()
+    private void Awake()
     {
         HideAllPanels();
         EventManager.OnEventStart += ShowChoices;
         EventManager.onEventListEmpty += EventListEmpty;
+
+
+        if (EventManager.instance.eventQueue.Count != 0)
+            ShowChoices(EventManager.instance.eventQueue.Peek());
     }
 
     private void Update()
@@ -72,26 +76,12 @@ public class UiManager : MonoBehaviour
                 TextPrinter.ForceFinish();
                 return;// prevent from multiple keys being pressed the same frame
             }
-            switch (CurrentPanel.panelType)
+            else if (!CurrentPanel.HasActiveButton())
             {
-                case PanelType.Narrative:
-                    if (!CurrentPanel.HasActiveButton())
-                    {
-                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetMouseButtonDown(0))
-                            EventManager.onEventFinish.Invoke();
-                    }
-                    break;
-                case PanelType.CutScene:
-                    if (!CurrentPanel.HasActiveButton())
-                    {
-                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetMouseButtonDown(0))
-                            EventManager.onEventFinish.Invoke();
-                    }
-                    break;
-                default:
-                    Debug.LogError("Panel not implemented");
-                    break;
+                if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetMouseButtonDown(0))
+                    EventManager.onEventFinish.Invoke();
             }
+
         }
     }
 
@@ -103,7 +93,7 @@ public class UiManager : MonoBehaviour
 
     private void ShowChoices(GameEvent gameEvent)
     {
-
+        //DontDestroyOnLoad(this);
         if (!gameObject.activeSelf)
             return;
 
@@ -149,16 +139,38 @@ public class UiManager : MonoBehaviour
             AssignOptions();
         }
 
-        if (panel.image != null)
-            if (CurrentEvent.image != null)
+        if (panel.panelType == PanelType.Narrative)
+        {
+            if (panel.image != null)
+                if (CurrentEvent.image != null)
+                {
+                    panel.image.gameObject.SetActive(true);
+                    panel.image.sprite = CurrentEvent.image ?? LastEvent?.image;
+                }
+                else
+                {
+                    panel.image.gameObject.SetActive(false);
+                }
+        }
+        else if (panel.panelType == PanelType.CutScene)
+        {
+            if (panel.image != null)
             {
-                panel.image.gameObject.SetActive(true);
-                panel.image.sprite = CurrentEvent.image ?? LastEvent?.image;
+                if (CurrentEvent.FadeTime == 0)
+                {
+                    panel.image.sprite = CurrentEvent.image;
+                    panel.image.color = new Color(1, 1, 1, 1);
+                }
+                else
+                {
+                    Debug.Log("test");
+                    panel.image.sprite = CurrentEvent.image;
+                    panel.image.color = new Color(1, 1, 1, 1);
+                    panel.image.DOKill(false);
+                    panel.image.DOColor(new Color(1, 1, 1, 0), CurrentEvent.FadeTime);
+                }
             }
-            else
-            {
-                panel.image.gameObject.SetActive(false);
-            }
+        }
 
         if (panel.SecondDescription != null)
         {
@@ -226,13 +238,14 @@ public class UiManager : MonoBehaviour
 
     private void EventListEmpty()
     {
+        //Destroy(gameObject);
         LastEvent = null;
         HideAllPanels();
-		sfx_hideUI.Play();
-			
-	}
+        sfx_hideUI.Play();
 
-	void RemoveMenuOnChoicePressed()
+    }
+
+    void RemoveMenuOnChoicePressed()
     {
         EventManager.onEventFinish.Invoke();
     }
@@ -242,7 +255,7 @@ public class UiManager : MonoBehaviour
         for (int i = 0; i < dialogPanels.Length; i++)
         {
             if (dialogPanels[i].panelType == _panelType &&
-				dialogPanels[i].panel != null)
+                dialogPanels[i].panel != null)
                 return dialogPanels[i];
         }
 
@@ -252,10 +265,10 @@ public class UiManager : MonoBehaviour
 
     void HideAllPanels()
     {
-		foreach (DialogPanel item in dialogPanels)
-		{
-			if (item?.panel != null)
-				item.panel.SetActive(false);
-		}
-	}
+        foreach (DialogPanel item in dialogPanels)
+        {
+            if (item?.panel != null)
+                item.panel.SetActive(false);
+        }
+    }
 }

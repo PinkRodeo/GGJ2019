@@ -33,8 +33,6 @@ public class AddEvents : MonoBehaviour
             DoneOnce = true;
         }
 
-
-
         if (EventChain != null)
             foreach (GameEvent item in EventChain.eventChain)
             {

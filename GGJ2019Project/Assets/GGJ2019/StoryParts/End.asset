@@ -10,39 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bc94134a7c06c5409de2d26efead2a9, type: 3}
-  m_Name: X_Cluster_Log1
+  m_Name: End
   m_EditorClassIdentifier: 
   eventChain:
-  - eventType: 0
+  - eventType: 2
     image: {fileID: 0}
     title: 
-    description: "(You): They are\u2026 Emma, Aziz, \u2026 how long ago was this recorded?\r"
+    description: '(You): That should be the last of them.'
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
     FadeTime: 0
-  - eventType: 0
+  - eventType: 2
     image: {fileID: 0}
     title: 
-    description: "Emma: You drifters still out there? This was a strong one. \r\nAziz:
-      Still fighting the good fight.\r\n"
+    description: '(You): Without warning I see a ship appear in my peripheral. And
+      another and another. With bright flashes, an armada of makeshift vessels arrives
+      through the Rift. All at the same time, in perfect shape.'
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
     FadeTime: 0
-  - eventType: 0
+  - eventType: 2
     image: {fileID: 0}
     title: 
-    description: "Mir: Peachy.\r\nTom: Nothing we can\u2019t handle. You?\r"
+    description: 'Command: Home Fleet to hosts, Home Fleet to hosts. Do we have contact?'
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6
     FadeTime: 0
-  - eventType: 0
+  - eventType: 2
     image: {fileID: 0}
     title: 
-    description: "Emma: Couldn\u2019t be better.\r\nAziz: Well come over here for
-      heatshield repairs, we can\u2019t let another flare catch us by surprise. \r\n"
+    description: '(You): Copy command. Welcome home. '
     TextPrintInterval: 1
     Choices: []
     newLevelToLoad: 6

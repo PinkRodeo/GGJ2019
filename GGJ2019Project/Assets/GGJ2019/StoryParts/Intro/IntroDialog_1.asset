@@ -14,37 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventChain:
   - eventType: 2
-    image: {fileID: 21300000, guid: 00b5a515a7ef56c4db89ae722171d93e, type: 3}
+    image: {fileID: 21300000, guid: 500c590081d01f941a55d6898946f4aa, type: 3}
     title: 
     description: "Theus: Hosts to Home Fleet, we\u2019re ready for the jump.\r\nCommander:
       Greenlight on the jump. Safe travels hosts.\r"
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 2
+    FadeTime: 0
   - eventType: 2
-    image: {fileID: 21300000, guid: 00b5a515a7ef56c4db89ae722171d93e, type: 3}
+    image: {fileID: 21300000, guid: 500c590081d01f941a55d6898946f4aa, type: 3}
     title: 
-    description: "Theus: See you on the other side commander:\r\nTheus: Hosts ready.\r"
+    description: "Theus: See you on the other side commander:\r\nTheus: Hosts ready?\r"
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 2
-    image: {fileID: 21300000, guid: 00b5a515a7ef56c4db89ae722171d93e, type: 3}
+    image: {fileID: 21300000, guid: 500c590081d01f941a55d6898946f4aa, type: 3}
     title: 
     description: "Emma: Roger.\r\nLinn: Sure am.\r"
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 2
-    image: {fileID: 21300000, guid: 00b5a515a7ef56c4db89ae722171d93e, type: 3}
+    image: {fileID: 21300000, guid: 500c590081d01f941a55d6898946f4aa, type: 3}
     title: 
     description: "(You): Let\u2019s find a new home shall we!"
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 2
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 500c590081d01f941a55d6898946f4aa, type: 3}
     title: 
     description: '(You): Bright light illuminates everything I can see. Not a single
       shadow can hide from this overwhelming force. '
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0.3
   - eventType: 2
     image: {fileID: 0}
     title: 
@@ -53,6 +63,8 @@ MonoBehaviour:
       different place.
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
@@ -60,12 +72,16 @@ MonoBehaviour:
       Host 12 coming to scout team. Is anyone there?"
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
     description: '(SYSTEM): No response detected.'
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
@@ -73,6 +89,8 @@ MonoBehaviour:
       Where is it? The Rift is\u2026 Not supposed to look like that. No wonder."
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
   - eventType: 0
     image: {fileID: 0}
     title: 
@@ -80,3 +98,5 @@ MonoBehaviour:
       to go on.\r"
     TextPrintInterval: 1
     Choices: []
+    newLevelToLoad: 6
+    FadeTime: 0
