@@ -4,14 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/GGJ2019/DamianTestScene.unity
-    guid: b6c1ac3624b54d54d836ae11cf932cb4
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/GGJ2019/Main.unity
-    guid: 5e5e3dbafd421bf40a36f68a84acbd33
+  m_Scenes: []
   m_configObjects: {}
