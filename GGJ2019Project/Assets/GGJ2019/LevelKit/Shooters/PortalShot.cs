@@ -14,6 +14,7 @@ public class PortalShot : MonoBehaviour
 	private PortalTarget _portalTarget;
 
 	private StudioEventEmitter sfx_PortalShot;
+	public StudioEventEmitter sfx_CompleteLevel;
 
 	protected void Awake()
 	{
@@ -56,20 +57,26 @@ public class PortalShot : MonoBehaviour
 
 		float seconds = 0f;
 		bool startedFade = false;
-
+		bool startedFanfare = false;
 		tween.onUpdate += () =>
 		{
 			if (targetLevel != E_Level.None)
 			{
 				seconds += Time.deltaTime;
-				if (seconds > 1.5f && startedFade == false)
+				if (seconds > 2f && startedFanfare == false)
 				{
-					Camera.main.DOFarClipPlane(0f, 1f);
+					sfx_CompleteLevel.Play();
+
+				}
+				if (seconds > 4f && startedFade == false)
+				{
+					Camera.main.DOFarClipPlane(0f, 5f);
 					Camera.main.backgroundColor = Color.black;
+
 				}
 				
 
-				if (seconds > 2.5f)
+				if (seconds > 7.5f)
 				{
 					tween.Kill();
 					switch (targetLevel)
