@@ -169,15 +169,22 @@ public class GrappleClaw : MonoBehaviour
 		JunkerGameMode.instance.claw = this;
 	}
 
+	private bool CanDoActions()
+	{
+		var noEvent = !JunkerGameMode.instance.eventManager.IsEventActive();
+
+		return noEvent;
+	}
+
 	// Update is called once per frame
 	void Update()
 	{
 		var player = JunkerGameMode.instance.player;
 		var worldTargetPos = JunkerGameMode.instance.cameraManager.currentCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -JunkerGameMode.instance.cameraManager.cameraDistance));
 
-		DebugExtension.DebugPoint(worldTargetPos, 10f, 0f, false);
+		//DebugExtension.DebugPoint(worldTargetPos, 10f, 0f, false);
 		var playerPos = JunkerGameMode.instance.player.rect_transform.position;
-		DebugExtension.DebugArrow(playerPos, worldTargetPos - playerPos);
+		//DebugExtension.DebugArrow(playerPos, worldTargetPos - playerPos);
 
 
 		if (Input.GetMouseButtonDown(0) && grappleState == E_GrappleState.Retracted)
@@ -191,10 +198,9 @@ public class GrappleClaw : MonoBehaviour
 
 			if (grappleState == E_GrappleState.Docked && !JunkerGameMode.instance.eventManager.IsEventActive())
 			{
-				Debug.Log("Released from docking");
 				grappleState = E_GrappleState.Releasing;
 			}
-			else if (grappleState == E_GrappleState.Travelling)
+			else if (grappleState == E_GrappleState.Travelling && !JunkerGameMode.instance.eventManager.IsEventActive())
 			{
 				grappleState = E_GrappleState.Retracted;
 			}
