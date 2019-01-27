@@ -1129,6 +1129,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8006682690024572451, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
+        type: 3}
+      propertyPath: m_TranslationAtRest.z
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006682690024572451, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
+        type: 3}
+      propertyPath: m_TranslationOffset.z
+      value: -65
+      objectReference: {fileID: 0}
     - target: {fileID: 5348127889904827088, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
         type: 3}
       propertyPath: m_AnchoredPosition.x

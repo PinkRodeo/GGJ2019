@@ -131,7 +131,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   sfx_hitTarget: {fileID: 2601224813019840159}
   sfx_reelTargetIn: {fileID: 0}
   sfx_hitReeledInTarget: {fileID: 4439486114282022295}
+  sfx_detachAfterWaltz: {fileID: 0}
 --- !u!60 &7745035264319965691
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -665,7 +666,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

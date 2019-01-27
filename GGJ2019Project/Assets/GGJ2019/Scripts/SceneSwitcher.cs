@@ -7,6 +7,6 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void SwitchScene(string sceneToLoad)
     {
-        SceneManager.LoadScene(sceneToLoad);
-    }
+		SceneLoader.instance.LoadSceneRift();
+	}
 }
