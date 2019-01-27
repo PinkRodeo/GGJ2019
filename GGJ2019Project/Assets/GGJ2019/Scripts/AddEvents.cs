@@ -29,6 +29,12 @@ public class AddEvents : MonoBehaviour
 	protected void Awake()
 	{
 		var clawTarget = GetComponent<ClawTarget>();
+		if (clawTarget == null)
+		{
+			return;
+		}
+		clawTarget.SetLightsVisible(true);
+
 		switch (eventTrigger)
 		{
 			case E_EventTrigger.OnClawConnect:
