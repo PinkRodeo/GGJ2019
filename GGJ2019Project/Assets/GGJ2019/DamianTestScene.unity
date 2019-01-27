@@ -285,11 +285,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Part1
       objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092492, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 786187920830092482, guid: 94b39f116a5d7ab41a77782e20407d54,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,76 +340,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[1].Keuzes.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].Keuzes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].Keuzes.Array.data[0].pressedActionList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].Keuzes.Array.data[1].pressedActionList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[1].Keuzes.Array.data[0].text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[0].TextPrintInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[1].TextPrintInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[2].TextPrintInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].TextPrintInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].Keuzes.Array.data[0].text
-      value: Press Me
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].Keuzes.Array.data[1].text
-      value: Don't Press me
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].Keuzes.Array.data[1].pressedActionList.Array.data[0].description
-      value: You pressed the don't press me button
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
-        type: 3}
-      propertyPath: eventsToAdd.Array.data[3].Keuzes.Array.data[0].pressedActionList.Array.data[0].description
-      value: Sub
-      objectReference: {fileID: 0}
-    - target: {fileID: 786187920830092493, guid: 94b39f116a5d7ab41a77782e20407d54,
+    - target: {fileID: 8237091396457568802, guid: 94b39f116a5d7ab41a77782e20407d54,
         type: 3}
       propertyPath: EventChain
       value: 
-      objectReference: {fileID: 11400000, guid: 6b4b77e6d632abc4b8f2429e3ca415ee,
+      objectReference: {fileID: 11400000, guid: 5785494e2f6a19b478b49c1e6329f367,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b39f116a5d7ab41a77782e20407d54, type: 3}
