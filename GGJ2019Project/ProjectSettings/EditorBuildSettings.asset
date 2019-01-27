@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/GGJ2019/Levels/X/L_X_Art.unity
     guid: 311aee99c290743999a70510bd9f4114
   - enabled: 1
+    path: Assets/GGJ2019/Levels/X/L_X_Level.unity
+    guid: c055e7356e585a34aaf6686ea0efbe5b
+  - enabled: 1
     path: Assets/GGJ2019/Levels/TheRift/L_Rift_Art.unity
     guid: e7de31802095f4f4cbbad46982e12cd7
   - enabled: 1

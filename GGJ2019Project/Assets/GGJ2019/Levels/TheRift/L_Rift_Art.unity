@@ -112,7 +112,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &11832133
+--- !u!21 &24287119
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -144,9 +144,9 @@ Material:
     - _BlurAmount: 0
     - _EnableExternalAlpha: 0
     - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.059042055
-    - _LevelAdjustC: 0.18334073
-    - _LightDirection: 1.55
+    - _LevelAdjustB: 0.06
+    - _LevelAdjustC: 0.189
+    - _LightDirection: 5.3
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
@@ -207,7 +207,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 303126935}
+  - {fileID: 1120876976}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -308,7 +308,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 750648636}
+  - {fileID: 974105934}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -409,7 +409,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1945137419}
+  - {fileID: 2036976927}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -501,6 +501,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &91542217
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.054681573
+    - _LevelAdjustC: 0.18701641
+    - _LightDirection: 5.3
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &93405726
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +619,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &135482469
+--- !u!21 &130380452
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -612,9 +651,9 @@ Material:
     - _BlurAmount: 0
     - _EnableExternalAlpha: 0
     - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.06
-    - _LevelAdjustC: 0.189
-    - _LightDirection: 0
+    - _LevelAdjustB: 0.056466736
+    - _LevelAdjustC: 0.17431992
+    - _LightDirection: 1.55
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
@@ -675,7 +714,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 11832133}
+  - {fileID: 130380452}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -713,7 +752,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185036458}
-  m_LocalRotation: {x: -0.060621742, y: -0.022551415, z: 0.20518342, w: -0.97658396}
+  m_LocalRotation: {x: 0, y: 0, z: 0.3746067, w: -0.9271838}
   m_LocalPosition: {x: 346, y: 350, z: 169.5694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -799,45 +838,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: -14.493001, y: -0.001, z: -38.862003}
---- !u!21 &193708323
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.06
-    - _LevelAdjustC: 0.189
-    - _LightDirection: 0
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &236814797
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +996,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: -5.195, y: -13.549001, z: 30.538002}
---- !u!21 &303126935
+--- !u!21 &249393434
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1027,15 +1027,54 @@ Material:
     - PixelSnap: 0
     - _BlurAmount: 0
     - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0123
-    - _LevelAdjustB: 0.04
-    - _LevelAdjustC: 0.161
-    - _LightDirection: 6.08
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.06
+    - _LevelAdjustC: 0.189
+    - _LightDirection: 2.61
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.8915094, b: 0.9763167, a: 0.34901962}
+    - _HighlightColor: {r: 0.6, g: 1, b: 0.84350264, a: 0.72156864}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &369158514
+--- !u!21 &316861271
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0.0057
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.0125
+    - _LevelAdjustB: 0.52144265
+    - _LevelAdjustC: 0.51848954
+    - _LightDirection: 2.15
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &455534773
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1209,7 +1248,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1837778399}
+  - {fileID: 455534773}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1254,46 +1293,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &478938890
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0123
-    - _LevelAdjustB: 0.04
-    - _LevelAdjustC: 0.161
-    - _LightDirection: 6.08
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.8915094, b: 0.9763167, a: 0.34901962}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &514833410
+--- !u!21 &508863495
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1332,7 +1332,7 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &518577147
+--- !u!21 &530863412
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1427,7 +1427,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 193708323}
+  - {fileID: 1930542081}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1528,7 +1528,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 969489131}
+  - {fileID: 1399355631}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1573,45 +1573,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &672828416
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0.0057
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0125
-    - _LevelAdjustB: 0.47317582
-    - _LevelAdjustC: 0.45724767
-    - _LightDirection: 2.15
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &714354916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,7 +1629,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 518577147}
+  - {fileID: 1010234470}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1713,84 +1674,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &750648636
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0.0057
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0125
-    - _LevelAdjustB: 0.5
-    - _LevelAdjustC: 0.5
-    - _LightDirection: 2.15
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &836420871
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.057743613
-    - _LevelAdjustC: 0.18809406
-    - _LightDirection: 0
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &876625964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1730,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1079303217}
+  - {fileID: 24287119}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1971,7 +1854,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &969489131
+--- !u!21 &953416320
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -2005,12 +1888,12 @@ Material:
     - _HighlightSize: 0.023
     - _LevelAdjustB: 0.06
     - _LevelAdjustC: 0.189
-    - _LightDirection: 3.45
+    - _LightDirection: 0
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &1011652874
+--- !u!21 &974105934
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -2044,6 +1927,123 @@ Material:
     - _HighlightSize: 0.0125
     - _LevelAdjustB: 0.5
     - _LevelAdjustC: 0.5
+    - _LightDirection: 2.15
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1010234470
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0.0057
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.0125
+    - _LevelAdjustB: 0.5
+    - _LevelAdjustC: 0.5
+    - _LightDirection: 2.15
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1012480072
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.06
+    - _LevelAdjustC: 0.189
+    - _LightDirection: 0
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1021178502
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0.0057
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.0125
+    - _LevelAdjustB: 0.464543
+    - _LevelAdjustC: 0.51663107
     - _LightDirection: 2.15
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
@@ -2105,7 +2105,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1068818701}
+  - {fileID: 1833573763}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2206,7 +2206,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1957796823}
+  - {fileID: 1784276424}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2244,7 +2244,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058195585}
-  m_LocalRotation: {x: 0.06418523, y: -0.007988676, z: 0.2689367, w: 0.9609837}
+  m_LocalRotation: {x: 0, y: 0, z: 0.09584575, w: 0.9953962}
   m_LocalPosition: {x: 584.3841, y: 504.7151, z: 99.27471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2307,7 +2307,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 836420871}
+  - {fileID: 1119636356}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2352,84 +2352,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: -7.8490005, y: 15.699, z: 66.584}
---- !u!21 &1068818701
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.06105573
-    - _LevelAdjustC: 0.178472
-    - _LightDirection: 0
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &1079303217
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.06
-    - _LevelAdjustC: 0.189
-    - _LightDirection: 5.3
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1097581334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,7 +2408,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 514833410}
+  - {fileID: 1012480072}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2531,45 +2453,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1100308651
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0.0057
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0125
-    - _LevelAdjustB: 0.45864478
-    - _LevelAdjustC: 0.52065134
-    - _LightDirection: 2.15
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1102298067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,7 +2509,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 369158514}
+  - {fileID: 530863412}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2671,6 +2554,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1119636356
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.06115617
+    - _LevelAdjustC: 0.19198844
+    - _LightDirection: 0
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1120876976
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.0123
+    - _LevelAdjustB: 0.04
+    - _LevelAdjustC: 0.161
+    - _LightDirection: 6.08
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.8915094, b: 0.9763167, a: 0.34901962}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1201169095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,7 +2688,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1796679420}
+  - {fileID: 91542217}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2765,52 +2726,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201169095}
-  m_LocalRotation: {x: -0.064655386, y: 0.0018000203, z: -0.17559236, w: -0.9823359}
+  m_LocalRotation: {x: 0, y: 0, z: -0.00000008742278, w: -1}
   m_LocalPosition: {x: 338.039, y: 460.54453, z: 160.26651}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 7.334, y: 1.107, z: 380.34}
---- !u!21 &1205448243
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.06
-    - _LevelAdjustC: 0.189
-    - _LightDirection: 2.61
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0.6, g: 1, b: 0.84350264, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1241289967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,7 +2789,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 135482469}
+  - {fileID: 508863495}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2968,7 +2890,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2126642225}
+  - {fileID: 1858420047}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3092,6 +3014,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1378808085
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.06
+    - _LevelAdjustC: 0.189
+    - _LightDirection: 0
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1399355631
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.06
+    - _LevelAdjustC: 0.189
+    - _LightDirection: 3.45
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1400407141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,7 +3148,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1633462025}
+  - {fileID: 2025880360}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3351,6 +3351,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: -5.195, y: -13.549001, z: 30.538002}
+--- !u!21 &1570564793
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0.0057
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.0125
+    - _LevelAdjustB: 0.5
+    - _LevelAdjustC: 0.5
+    - _LightDirection: 2.15
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1608166724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,7 +3446,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1902080164}
+  - {fileID: 1378808085}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3531,45 +3570,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1633462025
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.06
-    - _LevelAdjustC: 0.189
-    - _LightDirection: 1.55
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1747789036
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,7 +3626,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1205448243}
+  - {fileID: 249393434}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3727,7 +3727,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2043426624}
+  - {fileID: 1772484932}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3828,7 +3828,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 672828416}
+  - {fileID: 1021178502}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3873,7 +3873,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: -7.8490005, y: 15.699, z: 45.584003}
---- !u!21 &1796679420
+--- !u!21 &1772484932
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0.0057
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.0125
+    - _LevelAdjustB: 0.5
+    - _LevelAdjustC: 0.5
+    - _LightDirection: 2.15
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1784276424
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -3905,9 +3944,9 @@ Material:
     - _BlurAmount: 0
     - _EnableExternalAlpha: 0
     - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.059326116
-    - _LevelAdjustC: 0.19431293
-    - _LightDirection: 5.3
+    - _LevelAdjustB: 0.055553302
+    - _LevelAdjustC: 0.18250597
+    - _LightDirection: 0
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
@@ -3968,7 +4007,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1011652874}
+  - {fileID: 1570564793}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4013,6 +4052,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1833573763
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.058505043
+    - _LevelAdjustC: 0.18008119
+    - _LightDirection: 0
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1834991537
 GameObject:
   m_ObjectHideFlags: 0
@@ -4092,45 +4170,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1837778399
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0.0057
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0125
-    - _LevelAdjustB: 0.5
-    - _LevelAdjustC: 0.5
-    - _LightDirection: 2.15
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1851417370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,7 +4226,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1911299020}
+  - {fileID: 953416320}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4232,6 +4271,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1858420047
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0.0057
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.0125
+    - _LevelAdjustB: 0.5
+    - _LevelAdjustC: 0.5
+    - _LightDirection: 2.15
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1893278692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4288,7 +4366,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 478938890}
+  - {fileID: 2023032037}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4333,7 +4411,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1902080164
+--- !u!21 &1930542081
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4371,84 +4449,6 @@ Material:
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &1911299020
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.06
-    - _LevelAdjustC: 0.189
-    - _LightDirection: 0
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &1945137419
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0.0057
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0125
-    - _LevelAdjustB: 0.5
-    - _LevelAdjustC: 0.5
-    - _LightDirection: 2.15
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1952340996
 GameObject:
@@ -4529,45 +4529,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1957796823
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Space/SpaceSprite
-  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _BlurAmount: 0
-    - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.023
-    - _LevelAdjustB: 0.061352953
-    - _LevelAdjustC: 0.18769109
-    - _LightDirection: 0
-    m_Colors:
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2015369549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,7 +4585,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1100308651}
+  - {fileID: 316861271}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4669,7 +4630,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: -7.8490005, y: 15.699, z: 152.584}
---- !u!21 &2043426624
+--- !u!21 &2023032037
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4698,17 +4659,56 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _BlurAmount: 0.0057
+    - _BlurAmount: 0
     - _EnableExternalAlpha: 0
-    - _HighlightSize: 0.0125
-    - _LevelAdjustB: 0.5
-    - _LevelAdjustC: 0.5
-    - _LightDirection: 2.15
+    - _HighlightSize: 0.0123
+    - _LevelAdjustB: 0.04
+    - _LevelAdjustC: 0.161
+    - _LightDirection: 6.08
     m_Colors:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0, g: 0.76422787, b: 1, a: 0.45490196}
+    - _HighlightColor: {r: 1, g: 0.8915094, b: 0.9763167, a: 0.34901962}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &2126642225
+--- !u!21 &2025880360
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Space/SpaceSprite
+  m_Shader: {fileID: 4800000, guid: 65dddff39b9648940b0b28b7115bd0b1, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BlurAmount: 0
+    - _EnableExternalAlpha: 0
+    - _HighlightSize: 0.023
+    - _LevelAdjustB: 0.06
+    - _LevelAdjustC: 0.189
+    - _LightDirection: 1.55
+    m_Colors:
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.89279383, b: 0.6, a: 0.72156864}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &2036976927
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
