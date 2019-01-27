@@ -54,13 +54,17 @@ public class EventManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
+		if (instance != null)
+		{
+			GameObject.Destroy(this);
+			return;
+		}
+		else
+		{
+			instance = this;
+		}
 
-        }
-
-        onEventFinish += FinishEvent;
+		onEventFinish += FinishEvent;
     }
 
     protected void Update()

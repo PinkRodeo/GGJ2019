@@ -41,21 +41,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1392911681497586775}
     m_Modifications:
-    - target: {fileID: 6328487448710336547, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 587202633517036441, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 587202633517036441, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
-        type: 3}
-      propertyPath: m_UseAutoMass
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2014315212758396550, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -160,6 +145,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328487448710336547, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 587202633517036441, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 587202633517036441, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6859593980908042010, guid: 949d1bb41ab11504ab0a0dd2317b69c4,
         type: 3}
@@ -280,11 +280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1392911681497586775}
     m_Modifications:
-    - target: {fileID: 1874436078855343584, guid: 74f305a53ac54014faf51634e12bdac1,
-        type: 3}
-      propertyPath: m_Name
-      value: CameraManager
-      objectReference: {fileID: 0}
     - target: {fileID: 1874436078855343391, guid: 74f305a53ac54014faf51634e12bdac1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -294,11 +289,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1874436078855343391, guid: 74f305a53ac54014faf51634e12bdac1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -24.6
       objectReference: {fileID: 0}
     - target: {fileID: 1874436078855343391, guid: 74f305a53ac54014faf51634e12bdac1,
         type: 3}
@@ -390,6 +380,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1874436078855343584, guid: 74f305a53ac54014faf51634e12bdac1,
+        type: 3}
+      propertyPath: m_Name
+      value: CameraManager
+      objectReference: {fileID: 0}
     - target: {fileID: 5526170969724289099, guid: 74f305a53ac54014faf51634e12bdac1,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -449,61 +444,6 @@ PrefabInstance:
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3630760786085198687, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: m_Name
-      value: GrappleClaw
-      objectReference: {fileID: 0}
-    - target: {fileID: 3630760786085198687, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: m_Sources.Array.data[0].sourceTransform
-      value: 
-      objectReference: {fileID: 836056082388248977}
-    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: m_TranslationAtRest.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: m_TranslationOffsets.Array.data[0].x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: m_TranslationOffsets.Array.data[0].y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: m_RotationOffsets.Array.data[0].z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: tightness
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: preferredDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: damping
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
-        type: 3}
-      propertyPath: sfx_reelTargetIn
-      value: 
-      objectReference: {fileID: 5285362124843388125}
     - target: {fileID: 4198236176330949298, guid: 928256dd2847f0c40850e253dd7d31ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -609,6 +549,61 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3630760786085198687, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: m_Name
+      value: GrappleClaw
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630760786085198687, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 836056082388248977}
+    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: m_TranslationAtRest.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870303213502304187, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: m_RotationOffsets.Array.data[0].z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: tightness
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: preferredDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: damping
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098125856169386849, guid: 928256dd2847f0c40850e253dd7d31ad,
+        type: 3}
+      propertyPath: sfx_reelTargetIn
+      value: 
+      objectReference: {fileID: 5285362124843388125}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928256dd2847f0c40850e253dd7d31ad, type: 3}
 --- !u!224 &5705855899250206588 stripped

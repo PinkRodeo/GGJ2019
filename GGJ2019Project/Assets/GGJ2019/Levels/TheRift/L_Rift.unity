@@ -1055,11 +1055,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4156472696072850288, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8006682690024572452, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1069,6 +1064,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 836056082388248977, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -215
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156472696072850288, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041157241387428469, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].x
+      value: 215
       objectReference: {fileID: 0}
     - target: {fileID: 8006682690024572633, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
         type: 3}
@@ -1088,7 +1098,7 @@ PrefabInstance:
     - target: {fileID: 8006682690024572451, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
         type: 3}
       propertyPath: m_TranslationOffset.x
-      value: -215
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8006682690024572451, guid: df1ed5c6d76ec634f9bbbbb61cbac953,
         type: 3}
