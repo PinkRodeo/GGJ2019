@@ -64,7 +64,16 @@ public class JunkerPlayer : MonoBehaviour
             input.x = -1f;
         }
 
-        AddVelocity(input * 10f);
+		if (Input.GetKey(KeyCode.LeftShift))
+		{
+			AddVelocity(input * 50f);
+
+		}
+		else
+		{
+			AddVelocity(input * 15f);
+
+		}
 
 		if (fixedJoint.connectedBody != null)
 		{
