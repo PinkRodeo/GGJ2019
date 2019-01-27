@@ -67,7 +67,7 @@ public class UiManager : MonoBehaviour
         // Debug.Log(TextPrinter.IsPrinting());
         if (CurrentPanel != null)
         {
-            if (TextPrinter != null && TextPrinter.IsPrinting() && Input.GetKeyDown(KeyCode.Space))
+            if (TextPrinter != null && TextPrinter.IsPrinting() && Input.GetMouseButtonDown(0))
             {
                 TextPrinter.ForceFinish();
                 return;// prevent from multiple keys being pressed the same frame
@@ -77,14 +77,14 @@ public class UiManager : MonoBehaviour
                 case PanelType.Narrative:
                     if (!CurrentPanel.HasActiveButton())
                     {
-                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetKeyDown(KeyCode.Space))
+                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetMouseButtonDown(0))
                             EventManager.onEventFinish.Invoke();
                     }
                     break;
                 case PanelType.CutScene:
                     if (!CurrentPanel.HasActiveButton())
                     {
-                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetKeyDown(KeyCode.Space))
+                        if ((TextPrinter != null && !TextPrinter.IsPrinting() || TextPrinter == null) && Input.GetMouseButtonDown(0))
                             EventManager.onEventFinish.Invoke();
                     }
                     break;
@@ -150,7 +150,7 @@ public class UiManager : MonoBehaviour
 
         if (panel.SecondDescription != null)
         {
-            panel.SecondDescription.text = TextPrinter != null && TextPrinter.IsPrinting() ? "SPACE TO SKIP" : "SPACE TO CONTINUE >";
+            panel.SecondDescription.text = TextPrinter != null && TextPrinter.IsPrinting() ? "..." : "PRESS TO CONTINUE >";
 
             panel.SecondDescription.gameObject.SetActive(true);
         }
@@ -159,7 +159,7 @@ public class UiManager : MonoBehaviour
     void UpdateSecodnDescription()
     {
         if (CurrentPanel.SecondDescription != null)
-            CurrentPanel.SecondDescription.text = TextPrinter.IsPrinting() ? "SPACE TO SKIP" : "SPACE TO CONTINUE >";
+            CurrentPanel.SecondDescription.text = TextPrinter.IsPrinting() ? "..." : "PRESS TO CONTINUE >";
     }
 
     void AssignOptions()
