@@ -51,22 +51,22 @@ public class EventManager : MonoBehaviour
     public static GameEventDelegate OnEventStart;
     public static Delegate onEventFinish;
     public static Delegate onEventListEmpty;
-	public StudioEventEmitter sfx_showUI;
+    public StudioEventEmitter sfx_showUI;
 
 
-	private void Awake()
+    private void Awake()
     {
-		if (instance != null)
-		{
-			GameObject.Destroy(this);
-			return;
-		}
-		else
-		{
-			instance = this;
-		}
+        if (instance != null)
+        {
+            GameObject.Destroy(this);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
 
-		onEventFinish += FinishEvent;
+        onEventFinish += FinishEvent;
     }
 
     protected void Update()
@@ -89,9 +89,10 @@ public class EventManager : MonoBehaviour
         if (instance.eventQueue.Count == 1)
         {
             instance.ExecuteNextItemInQue();
-			instance.sfx_showUI.Play();
 
-		}
+            if (instance.sfx_showUI != null)
+                instance.sfx_showUI.Play();
+        }
     }
 
     public static void ReplaceCurrentEvents(List<GameEvent> newEvents)

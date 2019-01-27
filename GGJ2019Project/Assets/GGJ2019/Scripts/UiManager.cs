@@ -95,8 +95,17 @@ public class UiManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        EventManager.OnEventStart -= ShowChoices;
+        EventManager.onEventListEmpty -= EventListEmpty;
+    }
+
     private void ShowChoices(GameEvent gameEvent)
     {
+
+        if (!gameObject.activeSelf)
+            return;
 
         CurrentEvent = gameEvent;
         HideAllPanels();
