@@ -68,8 +68,8 @@ public class SpaceSpriteHelper : MonoBehaviour
 
 		if (bRandomizeValue)
 		{
-			material.SetFloat("_LevelAdjustB", Mathf.Max(0f, Random.Range(brightness * 0.95f, brightness * 1.05f)));
-			material.SetFloat("_LevelAdjustC", Mathf.Max(0f, Random.Range(contrast * 0.95f, contrast * 1.05f)));
+			material.SetFloat("_LevelAdjustB", Mathf.Max(0f, Random.Range(brightness * 0.9f, brightness * 1.05f)));
+			material.SetFloat("_LevelAdjustC", Mathf.Max(0f, Random.Range(contrast * 0.9f, contrast * 1.05f)));
 		}
 		else
 		{

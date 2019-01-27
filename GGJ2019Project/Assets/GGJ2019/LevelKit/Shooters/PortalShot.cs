@@ -6,6 +6,8 @@ using FMODUnity;
 
 public class PortalShot : MonoBehaviour
 {
+	public E_Level targetLevel = E_Level.None;
+	
 	public Color portalColor;
 	private ClawTarget _clawTarget;
 
@@ -45,9 +47,48 @@ public class PortalShot : MonoBehaviour
 
 		var currentPos = player.rect_transform.position;
 		var tween = DOTween.To(() => { return currentPos; }, (Vector3 vec) => { player.rect_transform.position = vec; }, _portalTarget.transform.position, length * 0.03f).SetEase(Ease.InOutCubic);
+		Camera.main.DOShakePosition(0.6f, 3, 10, 90f, true);
+
+		float seconds = 0f;
+		bool startedFade = false;
 
 		tween.onUpdate += () =>
 		{
+			if (targetLevel != E_Level.None)
+			{
+				seconds += Time.deltaTime;
+				if (seconds > 1.5f && startedFade == false)
+				{
+					Camera.main.DOFarClipPlane(0f, 1f);
+					Camera.main.backgroundColor = Color.black;
+				}
+				
+
+				if (seconds > 2.5f)
+				{
+					tween.Kill();
+					switch (targetLevel)
+					{
+						case E_Level.Rift:
+							SceneLoader.instance.LoadSceneRift();
+							break;
+						case E_Level.X:
+							SceneLoader.instance.LoadSceneX();
+							break;
+						case E_Level.Y:
+							SceneLoader.instance.LoadSceneY();
+							break;
+						case E_Level.Z:
+							SceneLoader.instance.LoadSceneZ();
+							break;
+						case E_Level.MainMenu:
+							SceneLoader.instance.LoadSceneMainMenu();
+							break;
+					}
+				}
+			}
+			
+
 			player.rigidBody.simulated = false;
 			player.rigidBody.velocity = Vector2.zero;
 			player.rigidBody.angularVelocity = 0f;

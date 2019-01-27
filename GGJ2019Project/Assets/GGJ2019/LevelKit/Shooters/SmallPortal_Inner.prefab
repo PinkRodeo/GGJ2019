@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 7530a9ca9aab24ef6a9d53f840e53c41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38d2af77942a341d7b3dfc5820e85d22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e460288dc4cf374fb6ab442fb885e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLevel: 6
   portalColor: {r: 0.6981132, g: 0.10208259, b: 0.58584476, a: 0.6}
 --- !u!1 &8687092141473848614
 GameObject:

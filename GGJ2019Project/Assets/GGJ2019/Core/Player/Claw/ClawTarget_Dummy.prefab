@@ -62,6 +62,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cc437a56f61404eb9f8d6ff6b577ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bEnableLights: 0
+  lights: []
+  tweakSprite: 0
+  spriteTint: {r: 0, g: 1, b: 0, a: 1}
+  lightTint: {r: 0, g: 1, b: 0, a: 1}
 --- !u!50 &1640952016911779316
 Rigidbody2D:
   serializedVersion: 4

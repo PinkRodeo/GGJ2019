@@ -117,6 +117,7 @@ public class SceneLoader : MonoBehaviour
 
 		SceneManager.LoadScene("L_X", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_X_Art", LoadSceneMode.Additive);
+		SceneManager.LoadScene("L_X_Level", LoadSceneMode.Additive);
 
 		Enter();
 	}
@@ -127,6 +128,7 @@ public class SceneLoader : MonoBehaviour
 
 		SceneManager.LoadScene("L_Y", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_Y_Art", LoadSceneMode.Additive);
+		SceneManager.LoadScene("L_Y_Level", LoadSceneMode.Additive);
 
 		Enter();
 	}
@@ -137,6 +139,7 @@ public class SceneLoader : MonoBehaviour
 
 		SceneManager.LoadScene("L_Z", LoadSceneMode.Single);
 		SceneManager.LoadScene("L_Z_Art", LoadSceneMode.Additive);
+		SceneManager.LoadScene("L_Z_Level", LoadSceneMode.Additive);
 
 		Enter();
 	}
