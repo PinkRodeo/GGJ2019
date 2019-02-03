@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 863325234667576819, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc9a752a5fbb9fd4baa657e324a6dbf0, type: 2}
     - target: {fileID: 7186416977411829638, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
         type: 3}
       propertyPath: m_Name
@@ -82,11 +87,6 @@ PrefabInstance:
       propertyPath: lights.Array.data[0]
       value: 
       objectReference: {fileID: 1228077368173667432}
-    - target: {fileID: 863325234667576819, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bc9a752a5fbb9fd4baa657e324a6dbf0, type: 2}
     - target: {fileID: 3469049673218295530, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
         type: 3}
       propertyPath: targetLevel

@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 863325234667576819, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 863325234667576819, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f7f0c402af0785478305386cd4ebbcd, type: 2}
     - target: {fileID: 7186416977411829638, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
         type: 3}
       propertyPath: m_Name
@@ -77,41 +87,6 @@ PrefabInstance:
       propertyPath: lights.Array.data[0]
       value: 
       objectReference: {fileID: 6914808271145066633}
-    - target: {fileID: 863325234667576819, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 863325234667576819, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6f7f0c402af0785478305386cd4ebbcd, type: 2}
-    - target: {fileID: 3456172969447793834, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 102.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456172969447793834, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 200.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687092141473848614, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687092141473848614, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_Name
-      value: PortalTarget
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402920634528019337, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
-        type: 3}
-      propertyPath: m_AutoTiling
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3469049673218295530, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
         type: 3}
       propertyPath: targetLevel
@@ -138,6 +113,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5f27d8aec50f54021a5df14c06c5fe2f,
         type: 3}
+    - target: {fileID: 6402920634528019337, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456172969447793834, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 102.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456172969447793834, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 200.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687092141473848614, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687092141473848614, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad,
+        type: 3}
+      propertyPath: m_Name
+      value: PortalTarget
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56fe4fc6e3e0b5d47827ab4ef83db5ad, type: 3}
 --- !u!212 &6914808271145066633 stripped

@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4170035294603198764}
     m_Modifications:
-    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
-        type: 3}
-      propertyPath: m_Name
-      value: NotifyLight (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 6561952181726508259, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_RootOrder
@@ -61,6 +56,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2.4772
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
+        type: 3}
+      propertyPath: m_Name
+      value: NotifyLight (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3205574541335221909, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
@@ -559,6 +559,26 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[40].y
       value: -1.8966669
       objectReference: {fileID: 0}
+    - target: {fileID: 1512930852223526046, guid: 3bcff5e268d837648ac161ba4ba8eaee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512930852223526046, guid: 3bcff5e268d837648ac161ba4ba8eaee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749123972173420578, guid: 3bcff5e268d837648ac161ba4ba8eaee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749123972173420578, guid: 3bcff5e268d837648ac161ba4ba8eaee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.31
+      objectReference: {fileID: 0}
     - target: {fileID: 992659348, guid: 3bcff5e268d837648ac161ba4ba8eaee, type: 3}
       propertyPath: lights.Array.size
       value: 8
@@ -599,6 +619,16 @@ PrefabInstance:
       propertyPath: lights.Array.data[7]
       value: 
       objectReference: {fileID: 7625159183073017322}
+    - target: {fileID: 7175293214427514600, guid: 3bcff5e268d837648ac161ba4ba8eaee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010464810846026324, guid: 3bcff5e268d837648ac161ba4ba8eaee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2252365172213888799, guid: 3bcff5e268d837648ac161ba4ba8eaee,
         type: 3}
       propertyPath: bRandomizeValue
@@ -607,36 +637,6 @@ PrefabInstance:
     - target: {fileID: 2252365172213888799, guid: 3bcff5e268d837648ac161ba4ba8eaee,
         type: 3}
       propertyPath: bRandomizeRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1512930852223526046, guid: 3bcff5e268d837648ac161ba4ba8eaee,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1512930852223526046, guid: 3bcff5e268d837648ac161ba4ba8eaee,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749123972173420578, guid: 3bcff5e268d837648ac161ba4ba8eaee,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749123972173420578, guid: 3bcff5e268d837648ac161ba4ba8eaee,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8010464810846026324, guid: 3bcff5e268d837648ac161ba4ba8eaee,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7175293214427514600, guid: 3bcff5e268d837648ac161ba4ba8eaee,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -666,11 +666,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4170035294603198764}
     m_Modifications:
-    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
-        type: 3}
-      propertyPath: m_Name
-      value: NotifyLight (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 6561952181726508259, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_RootOrder
@@ -721,6 +716,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.4772
       objectReference: {fileID: 0}
+    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
+        type: 3}
+      propertyPath: m_Name
+      value: NotifyLight (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 3205574541335221909, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_SortingOrder
@@ -746,11 +746,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4170035294603198764}
     m_Modifications:
-    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
-        type: 3}
-      propertyPath: m_Name
-      value: NotifyLight (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 6561952181726508259, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_RootOrder
@@ -770,6 +765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
+        type: 3}
+      propertyPath: m_Name
+      value: NotifyLight (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3205574541335221909, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
@@ -791,11 +791,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4170035294603198764}
     m_Modifications:
-    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
-        type: 3}
-      propertyPath: m_Name
-      value: NotifyLight (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6561952181726508259, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_RootOrder
@@ -815,6 +810,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
+        type: 3}
+      propertyPath: m_Name
+      value: NotifyLight (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3205574541335221909, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
@@ -836,11 +836,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4170035294603198764}
     m_Modifications:
-    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
-        type: 3}
-      propertyPath: m_Name
-      value: NotifyLight (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6561952181726508259, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_RootOrder
@@ -876,6 +871,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
+        type: 3}
+      propertyPath: m_Name
+      value: NotifyLight (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3205574541335221909, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_Enabled
@@ -896,11 +896,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4170035294603198764}
     m_Modifications:
-    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
-        type: 3}
-      propertyPath: m_Name
-      value: NotifyLight (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 6561952181726508259, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
       propertyPath: m_RootOrder
@@ -950,6 +945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2.4772
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058047641369198225, guid: facfc05fc930edf4daddecbe71507968,
+        type: 3}
+      propertyPath: m_Name
+      value: NotifyLight (6)
       objectReference: {fileID: 0}
     - target: {fileID: 3205574541335221909, guid: facfc05fc930edf4daddecbe71507968,
         type: 3}
