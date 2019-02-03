@@ -75,6 +75,11 @@ public class EventManager : MonoBehaviour
 
     void HandleSceneSwitch(GameEvent executedEvent)
     {
+		if (executedEvent.newLevelToLoad == E_Level.None)
+		{
+			return;
+		}
+
         if (executedEvent.newLevelToLoad != SceneLoader.instance.currentLevel)
             switch (executedEvent.newLevelToLoad)
             {

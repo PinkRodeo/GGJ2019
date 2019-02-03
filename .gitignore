@@ -37,10 +37,11 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-
 FMODStudioCache.asset
-Master Bank.bank.meta
-Master Bank.strings.bank.meta
 fmod_editor.log
 
 GGJ2019Project/Assets/FMODStudioCache.asset.meta
+GGJ2019Project/Assets/StreamingAssets/Master Bank.bank
+GGJ2019Project/Assets/StreamingAssets/Master Bank.bank.meta
+GGJ2019Project/Assets/StreamingAssets/Master Bank.strings.bank
+GGJ2019Project/Assets/StreamingAssets/Master Bank.strings.bank.meta

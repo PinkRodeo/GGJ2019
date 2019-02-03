@@ -51,8 +51,10 @@ public class ClawTarget : MonoBehaviour
 			}
 		}
 
-		gameObject.tag = TAG;
-
+		if (gameObject.tag != TAG)
+		{
+			Debug.Log("Claw Target has incorrect tag setup");
+		}
 	}
 
 	public void SetLightsVisible(bool p_visible)
@@ -62,7 +64,7 @@ public class ClawTarget : MonoBehaviour
 			light.enabled = p_visible;
 		}
 	}
-	
+
 	public void ClawConnect()
 	{
 		if (OnClawConnect != null)
@@ -81,5 +83,5 @@ public class ClawTarget : MonoBehaviour
 			OnShipUnDocked();
 	}
 
-	
+
 }

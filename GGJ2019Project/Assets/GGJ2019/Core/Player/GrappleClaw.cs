@@ -352,7 +352,6 @@ public class GrappleClaw : MonoBehaviour
 		if (grappleState != E_GrappleState.Travelling)
 			return;
 		
-
 		Debug.Log("Triggered the claw");
 
 		if (p_collision.collider.tag != ClawTarget.TAG)
